@@ -1,0 +1,34 @@
+				<div class="widget" style="
+					border-top: 8px solid #d52728;
+					box-shadow: 0 0 1px #666 inset;
+					padding: 20px;
+					margin-bottom: 30px;
+					margin-top: 10px;
+				">
+					<ul class="nav nav-list">
+						<li><a href="#">Your Library Account <i class="fa fa-arrow-circle-o-right"></i></a></li>
+						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Libraries <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Roesch Library</a></li>
+								<li><a href="#">Marian Library</a></li>
+								<li><a href="#">CMC Library</a></li>
+								<li><a href="#">Zimmerman Law Library</a></li>
+							</ul>
+						</li>
+						
+						<li><a href="#">Ask A Librarian <i class="fa fa-arrow-circle-o-right"></i></a></li>
+						<li><a href="#">InterLibrary Loan <i class="fa fa-arrow-circle-o-right"></i></a></li>
+						<li><a href="#">New Books List <i class="fa fa-arrow-circle-o-right"></i></a></li>
+						<li><a href="#">Leisure Reading <i class="fa fa-arrow-circle-o-right"></i></a></li>
+						<li><a href="#">OhioLINK <i class="fa fa-arrow-circle-o-right"></i></a></li>
+						<li><a href="#">WorldCat <i class="fa fa-arrow-circle-o-right"></i></a></li>
+						<li><a href="#">Report a Catalog Error <i class="fa fa-arrow-circle-o-right"></i></a></li>
+						<li><a href="#">Hours &amp; Events <i class="fa fa-arrow-circle-o-right"></i></a></li>
+
+					</ul>
+				
+				
+
+				</div>

@@ -1,0 +1,187 @@
+<!-- botlogo.html start -->
+	<!-- /BODY AREA -->
+	</div>
+	<!--           -->
+	
+	</div>
+</div> <!--/row -->
+		
+</div>
+<!-- /our container -->
+		
+		<!-- FOOTER -->
+		<!-- include custom class .footer_link , .desktop_footer_logo , and .bot_link -->
+		<div id="FOOTER">
+		<!--          -->
+		
+		<div class="footer" style="
+			background: #333;
+			color: #aaa;
+			font-size: 14px;
+			padding: 20px 0 0;
+		">
+		
+			<div class="container">
+
+				<div class="visible-sm visible-xs desktop_footer_logo" style="
+					width: 243px;
+					height: 24px;
+					background-repeat: no-repeat;
+				">
+				</div>
+				<div class="visible-lg visible-md desktop_footer_logo" style="
+					width: 407px;
+					height: 39px;
+					background-repeat: no-repeat;
+				">
+				</div>
+				
+				<div style="	
+					padding-bottom: 10px;
+					text-transform: uppercase;
+					font-family: 'Champion Lightwt A', Helvetica,Arial,sans-serif;
+					letter-spacing: 2px;
+					font-size: 40px;
+					font-weight: 400;
+					color: #AAA;
+					position: relative;
+					/*padding-left: 5px;*/
+				">Libraries
+				</div>
+				
+				<div class="row">
+					<div class="col-md-3">
+					<p>
+						<a href="http://www.udayton.edu/libraries/" class="footer_link">
+						<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+						Roesch Library
+						</a><br />
+						University of Dayton<br />
+						300 College Park<br />
+						Dayton, OH 45469-1360<br />
+						Phone: 937-229-4221<br />
+						Reference: 937-229-4270<br />
+					</p>
+					</div>
+					
+					<div class="col-md-3">
+					<p>
+						<a href="http://campus.udayton.edu/mary/" class="footer_link">
+						<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+						Marian Library
+						</a><br />
+						International Marian Research Institute<br />
+						300 College Park<br />
+						Dayton, OH 45469-1390<br />
+						Phone: 937-229-4214<br />
+					</p>
+					</div>
+					
+					<div class="col-md-3">
+					<p>
+						<a href="http://law.udayton.edu/lawlibrary/" class="footer_link">
+						<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+						Zimmerman Law Library
+						</a><br />
+						University of Dayton School of Law<br />
+						300 College Park<br />
+						Dayton, OH 45469-2760<br />
+						Phone: 937-229-2314<br />
+					</p>
+					</div>
+					
+					<div class="col-md-3">
+					<p>
+						<a href="http://www.udayton.edu/education/cmc/index.php" class="footer_link">
+						<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+						CMC Library
+						</a><br />
+						Curriculum Materials Center <br />
+						Fitz Hall, Room 684 <br />
+						300 College Park <br />
+						Dayton, OH 45469-0514 <br />
+						Phone: 937-229-3140 <br />
+					</p>
+					</div>
+				</div>
+				<!-- /row -->
+				
+			</div>
+			<!-- /container -->
+		</div>
+		
+		<div style="
+			background: black;
+			color: white;
+			font-size: 14px;
+			padding: 20px 0 0;
+			/* height: 80px; */
+		">
+			<div class="container">
+			<span class="pull-right">
+				<span style="padding-right:15px;">
+					<a class="bot_link" href="https://www.udayton.edu/libraries/welcome/privacy_and_ebook_access.php">E-Book Access and Privacy Statement</a>
+				</span>
+				<span style="padding-right:15px;">
+					<a class="bot_link" href="https://porches.udayton.edu/">Porches</a>
+				</span>
+				<span style="padding-right:15px;">
+					<a class="bot_link" href="https://www.udayton.edu/policies/index.php">Policies</a>
+				</span>
+				<span style="padding-right:15px;">
+					<a class="bot_link" href="https://www.udayton.edu/terms/privacy.php">Privacy Policy</a>
+				</span>
+				<span style="padding-right:15px;">
+					<a class="bot_link" href="https://www.udayton.edu/terms/terms-and-conditions.php">Terms</a>
+				</span>
+				<span>
+					<a class="bot_link" href="https://www.udayton.edu/finadmin/legalaffairs/nondiscrimination/index.php">Nondiscrimination / Title IX</a>
+				</span>
+			</span>
+			</div>
+		</div>
+		
+<script type="text/javascript">
+$( document ).ready(function() {
+	//modify some of the elements in our top search form to enable responsive function
+	if (document.getElementsByName('searchtool')) {	
+		//remove the border around the searchtool
+		document.getElementsByClassName('browseSearchtool')[0].className = '';
+		
+		//change the form class for responsive function
+		var target_form = document.getElementsByName('searchtool')[0];
+		target_form.className = 'form-inline';
+
+		//wrap the inner contents of the form in a div with class form-group
+		var form_html = target_form.innerHTML;
+		target_form.innerHTML = '<div class="form-group">\n' + form_html + '\n</div>';
+
+		//change the input values so that they have the proper class name 
+		document.getElementById('searchtype').className = 'form-control';
+		document.getElementById('searcharg').className = 'form-control';
+		document.getElementById('sortdropdown').className = 'form-control';
+		
+		//wrap the input element for the checkbox in a div and label
+		var checkbox_label = document.getElementsByClassName('availLimMessage')[0];
+		var form_html = document.getElementsByName('availlim')[0].outerHTML;
+		document.getElementsByName('availlim')[0].outerHTML = '<div class="checkbox"><label>\n' +  form_html  + '\n' + checkbox_label.innerHTML + '</label></div>';	
+		//set the original label to not display
+		checkbox_label.style='display:none';
+		
+		//set the submit and sort button to display correctly
+		document.getElementsByName('SUBMIT')[0].className = 'btn btn-default';
+		if (document.getElementById('sortbutton')) {
+			document.getElementById('sortbutton').className = 'btn btn-default';
+		}//end if
+	}//end if
+});
+</script>
+
+		<!--         -->
+		</div>
+		<!-- /FOOTER -->
+			
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+		
+<script src="/screens/bootstrap.min.js"></script>
+<!-- botlogo.html end -->

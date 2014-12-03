@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>University of Dayton Libraries Catalog</title>
+
+		<!-- Bootstrap -->
+		<!-- <link href="./css/bootstrap.min.css" rel="stylesheet">		 -->
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+	
+		<div class="container-fluid">
+		<div class="row">
+		<div class="col-md-12">
+	
+		<!-- ADVANCED_SEARCH -->
+		<div id="ADVANCED_SEARCH">
+		<!-- remember to comment out the form when uploading to the iii server -->
+		<!--                 -->
+		
+		<!-- get our iii tokens -->
+			<!-- branch -->
+			<div id="token_branch" style="display: none;">
+<!--{branch}-->
+			</div>
+			<!-- /branch -->
+
+			<!-- mattype -->
+			<div id="token_mattype" style="display: none;">
+<!--{mattype}-->
+			</div>
+			<!-- /mattype -->
+
+			<!-- lang -->
+			<div id="token_lang" style="display: none;">
+<!--{lang}-->
+			</div>
+			<!--lang-->
+		<!-- /get our tokens -->
+		
+		<!-- output any message from the server here -->
+	<!-- msg -->
+<!--{msg}-->
+	<!-- /msg -->
+
+	<!-- spellcheck -->
+<!--{spellcheck}-->
+	<!-- /spellcheck -->
+	
+		<div id="advancedsearchformbegin">
+		<!--advancedsearchformbegin-->
+<!--{advancedsearchformbegin}-->
+		<!--/advancedsearchformbegin-->
+		<!-- JavaScript below will modify the class for this form ... -->
+		
+		<!-- *** -->
+		<!-- un-comment the tag <form class="form-horizontal" role="form"> below to test how it will look locally -->
+		<form class="form-horizontal" role="form">
+		
+			<span class="help-block">Enter Search Terms For <strong>Advanced Search</strong></span>
+			<!-- limit 1 -->
+			<div class="form-group">
+				
+				<div class="col-md-3">
+					<select name="fieldLimit1" class="form-control input-sm">
+						<option value="" selected="selected">Any Field:</option>
+						<option value="a:">AUTHOR:</option>
+						<option value="t:">TITLE:</option>
+						<option value="d:">SUBJECT:</option>
+						<option value="N:">Note:</option>
+					</select>
+				</div>
+				
+				<div class="col-md-6">
+					<input name="searchText1" type="text" class="form-control input-sm" placeholder="Enter Keyword">
+				</div>
+				
+				<div class="col-md-3">
+					<select name="boolean1" class="form-control input-sm">
+						<option value="%20and%20" selected="selected">And</option>
+						<option value="%20and%20not%20">And not</option>
+						<option value="%20or%20">Or</option>
+					</select>
+				</div>
+				
+			</div>
+			<!-- /limit 1 -->
+
+			<!-- limit 2 -->
+			<div class="form-group">
+				
+				<div class="col-md-3">
+					<select name="fieldLimit2" class="form-control input-sm">
+						<option value="" selected="selected">Any Field:</option>
+						<option value="a:">AUTHOR:</option>
+						<option value="t:">TITLE:</option>
+						<option value="d:">SUBJECT:</option>
+						<option value="N:">Note:</option>
+					</select>
+				</div>
+				
+				<div class="col-md-6">
+					<input name="searchText2" type="text" class="form-control input-sm" placeholder="Enter Keyword">
+				</div>
+				
+				<div class="col-md-3">
+					<select name="boolean2" class="form-control input-sm">
+						<option value="%20and%20" selected="selected">And</option>
+						<option value="%20and%20not%20">And not</option>
+						<option value="%20or%20">Or</option>
+					</select>
+				</div>
+				
+			</div>
+			<!-- /limit 2 -->		
+
+			<!-- limit 3 -->
+			<div class="form-group">
+				
+				<div class="col-md-3">
+					<select name="fieldLimit3" class="form-control input-sm">
+						<option value="" selected="selected">Any Field:</option>
+						<option value="a:">AUTHOR:</option>
+						<option value="t:">TITLE:</option>
+						<option value="d:">SUBJECT:</option>
+						<option value="N:">Note:</option>
+					</select>
+				</div>
+				
+				<div class="col-md-6">
+					<input name="searchText3" type="text" class="form-control input-sm" placeholder="Enter Keyword">
+				</div>
+				
+				<div class="col-md-3">
+					<select name="boolean3" class="form-control input-sm">
+						<option value="%20and%20" selected="selected">And</option>
+						<option value="%20and%20not%20">And not</option>
+						<option value="%20or%20">Or</option>
+					</select>
+				</div>
+				
+			</div>
+			<!-- /limit 3 -->
+
+			
+			<!-- limit 4 -->
+			<div class="form-group">
+				
+				<div class="col-md-3">
+					<select name="fieldLimit4" class="form-control input-sm">
+						<option value="" selected="selected">Any Field:</option>
+						<option value="a:">AUTHOR:</option>
+						<option value="t:">TITLE:</option>
+						<option value="d:">SUBJECT:</option>
+						<option value="N:">Note:</option>
+					</select>
+				</div>
+				
+				<div class="col-md-9">
+					<input name="searchText4" type="text" class="form-control input-sm" placeholder="Enter Keyword">
+				</div>
+								
+			</div>
+			<!-- /limit 4 -->
+			
+			<div class="form-group">
+				<div class="col-md-3">
+					<label for="SORT" class="control-label">Search and Sort: </label>
+				</div>
+				
+				<div class="col-md-9">
+					<select name="SORT" id="SORT" class="form-control input-sm">
+						<option value="D" selected="selected">sorted by relevance</option>
+						<option value="DX">sorted by date</option>
+						<option value="AX">sorted by title</option>
+					</select>
+				</div>
+				
+			</div>
+			
+			<div class="form-group">
+				<div class="col-md-12">
+					<label class="control-label">
+						<input type="checkbox" name="availlim" id="availlim" value="1">
+						<em>Limit results to available items</em>
+					</label>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				
+				<div class="col-md-3">
+				<label for="Da" class="control-label">Year: </label>
+				</div>
+				
+				<div class="col-md-2">
+					<input class="input-sm form-control" type="text" size="10" name="Da" id="Da" value="" placeholder="Year After">
+				</div>
+				
+				<div class="col-md-2">
+					<input class="input-sm form-control" type="text" size="10" name="Db" id="Db" value="" placeholder="Year Before">
+				</div>
+				
+			</div>
+			
+			<div class="form-group">
+				<div class="col-md-3">
+					<label for="b_target" class="control-label">Location: </label>
+				</div>
+				
+				<div class="col-md-9">
+					<select id="b_target" name="b" class="form-control">
+						<option value="">ANY</option>
+						<!-- more options added via token -->
+					</select>
+					
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-md-3">
+					<label for="m_target" class="control-label">Material Type: </label>
+				</div>
+				
+				<div class="col-md-9">
+					<select id="m_target" name="m" class="form-control">
+						<option value="">ANY</option>
+						<!-- more options added via token -->
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				
+				<div class="col-md-3">
+					<label for="l_target" class="control-label">Language: </label>
+				</div>
+				
+				<div class="col-md-9">
+					<select id="l_target" name="l" class="form-control">
+						<option value="">ANY</option>
+						<!-- more options added via token -->
+					</select>
+				</div>
+			</div>
+
+			<!-- old submit button ...  				
+			<div class="form-group">
+				<div class="col-md-12">
+					<button name="SUBMIT" type="submit" class="btn btn-default">Search</button>
+				</div>
+			</div>
+			 -->
+
+			<div class="form-group">
+				<div class="col-md-12">
+					<div class="advancedsubmit">
+					<!--advancedsubmit-->
+<!--{advancedsubmit}-->
+					<!--/advancedsubmit-->
+					</div>				
+				</div>
+			</div>
+			
+		</form>
+		</div> <!-- /advancedsearchformbegin token-->
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//change advanced search tab to direct link 
+				//	:do this only if we're NOT on the advanced search page
+				if (location.pathname != '/search/X') {
+					document.getElementById('tab-advanced').getElementsByTagName('a')[0].removeAttribute('data-toggle');
+					document.getElementById('pill-advanced').getElementsByTagName('a')[0].removeAttribute('data-toggle');
+					document.getElementById('tab-advanced').getElementsByTagName('a')[0].href='/search/X';
+					document.getElementById('pill-advanced').getElementsByTagName('a')[0].href='/search/X';
+				}
+				//do this if we're on the advanced search page
+				else {
+					//needed to style the form element for bootstrap
+					document.getElementById('advancedsearchformbegin').getElementsByTagName('form')[0].className = "form-horizontal";
+					document.getElementById('advancedsearchformbegin').getElementsByTagName('form')[0].roleName = "form";
+					
+					function fill_options(source, target) {
+						var source_options = document.getElementById(source);
+						var target_options = document.getElementById(target);
+
+						for (var i=0; i<source_options.length; i++) {
+							var option = document.createElement('option');
+							option.text = source_options[i].text;
+							option.value = source_options[i].value;
+							target_options.add(option, target_options[i]);
+						}
+					}
+					
+					fill_options('b', 'b_target');
+					fill_options('m', 'm_target');
+					fill_options('l', 'l_target');
+				}	
+			});
+		</script>
+		
+		
+		<!--                 -->
+		</div>
+		<!-- /ADVANCED_SEARCH -->	
+		
+		</div>
+		</div>
+		</div>
+		
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+		<!-- <script src="./js/bootstrap.min.js"></script> -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	</body>
+</html>

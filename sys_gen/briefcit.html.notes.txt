@@ -1,0 +1,9 @@
+* Remove or modify class "browseSearchtool" --- adds a black border to the search box --- 
+
+* attempt to remove or resize something called "BEGIN BROWSE SCREEN RIGHT CELL"
+  It appears to be a system generated <td> that's added next to our inner <td> 
+  in the briefcit.html file. There's an associated class for the table formed
+  inside of this called "browseResourceTable" --find out what it does
+  Turn this off ...
+  http://csdirect.iii.com/sierrahelp/Default.htm#sgppro/sgppro_custom_resource_tables_panels.html?Highlight=browse Resource
+  

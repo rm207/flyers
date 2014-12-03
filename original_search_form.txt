@@ -1,0 +1,29 @@
+<form name="searchtool" target="_self" action="/search/" method="GET">
+      <label for="searchtype" style="display:none;">SearchType</label> <select name="searchtype" id="searchtype" onchange="initSort()">
+        <option value="X" selected="selected"> KEYWORD</option>
+        <option value="a"> AUTHOR</option>
+        <option value="t"> TITLE</option>
+        <option value="d"> SUBJECT</option>
+        <option value="c"> LC CALL NO</option>
+      </select>
+      &nbsp;
+      <label for="searcharg" style="display:none;">Search</label><input name="searcharg" id="searcharg" size="30" onchange="return searchtoolSubmitAction()" maxlength="75" value="Steinbeck" type="text">
+      &nbsp;
+
+<span id="sort_cell">
+<select class="hideElem" id="sortdropdown" name="sortdropdown"><option value="t">Title</option><option value="a">Author</option><option value="c">Year</option><option value="r">Reverse Year</option><option value="n">Call Number</option><option value="m">Material Type</option><option value="-">System Sorted</option></select></span>
+
+<script type="text/JavaScript">
+<!-- Hide the JS
+initSort();
+// Unhide the JS -->
+</script>
+      <input name="SORT" value="DZ" type="hidden"><input name="extended" value="0" type="hidden">      <input name="SUBMIT" value="Search" onclick="return searchtoolSubmitAction();" type="submit">
+<div>
+      <input name="availlim" value="1" type="checkbox"> <span class="availLimMessage">Limit search to available items</span><br>
+</div>
+<div>
+      <input name="searchlimits" value="" type="hidden">
+      <input name="searchorigarg" value="XSteinbeck&amp;SORT=D" type="hidden">
+</div>
+</form>

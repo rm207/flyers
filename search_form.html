@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> 
+
+		<title>University of Dayton Libraries Catalog</title> 
+		
+		<!-- Bootstrap --> 
+		<link href="./css/bootstrap.min.css" rel="stylesheet"> 
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+		
+		<!-- Custom CSS --> 
+		<link href="./custom.css" rel="stylesheet"> 
+		<link href="/screens/custom.css" rel="stylesheet"> 
+		
+		<!--[if lt IE 9]> 
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> 
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> 
+		<![endif]-->
+	</head>
+	<body>
+	
+
+
+
+	
+		<!-- MAIN PAGE BODY -->
+		
+		<!-- our container for site content and grid system -->
+		<div class="container-fluid">
+		<div class="row">
+		<div class="col-md-12">
+		
+		
+		<!-- added roll="form" class="form-inline" -->
+		<form roll="form" class="form-inline" name="searchtool" target="_self" action="/search/" method="GET">
+			
+			<!-- added div class="form-group" -->
+			<div class="form-group">
+			<label for="searchtype" style="display:none;">SearchType</label> 
+			
+			<!-- added class="form-control" -->
+			<select class="form-control" name="searchtype" id="searchtype" onchange="initSort()">
+			<option value="X" selected="selected"> KEYWORD</option>
+			<option value="a"> AUTHOR</option>
+			<option value="t"> TITLE</option>
+			<option value="d"> SUBJECT</option>
+			<option value="c"> LC CALL NO</option>
+			</select>
+			&nbsp;
+			<label for="searcharg" style="display:none;">Search</label>
+			<!-- added class="form-control" -->
+			<input class="form-control" name="searcharg" id="searcharg" size="30" onchange="return searchtoolSubmitAction()" maxlength="75" value="Steinbeck" type="text">
+			&nbsp;
+
+			<span id="sort_cell">
+			<!-- added class="form-control" -->
+			<select class="form-control hideElem" id="sortdropdown" name="sortdropdown">
+				<option value="t">Title</option>
+				<option value="a">Author</option>
+				<option value="c">Year</option>
+				<option value="r">Reverse Year</option>
+				<option value="n">Call Number</option>
+				<option value="m">Material Type</option>
+				<option value="-">System Sorted</option>
+			</select>
+			</span>
+
+			<script type="text/JavaScript">
+			<!-- Hide the JS
+			initSort();
+			// Unhide the JS -->
+			</script>
+			<input name="SORT" value="DZ" type="hidden">
+			<input name="extended" value="0" type="hidden">
+			
+			<input class="btn btn-default" name="SUBMIT" value="Search" onclick="return searchtoolSubmitAction();" type="submit">
+			<div>
+			
+			<!-- added div class="checkbox" and label around input... -->
+			<div class="checkbox">
+			<label>
+			
+			<input name="availlim" value="1" type="checkbox"> <span class="availLimMessage">Limit search to available items</span><br>
+			
+			<!-- added /label and /div -->
+			</label>
+			</div>
+			
+			</div>
+			<div>
+			<input name="searchlimits" value="" type="hidden">
+			<input name="searchorigarg" value="XSteinbeck&amp;SORT=D" type="hidden">
+			</div>
+			<!-- added div here -->
+			</div>
+		</form>
+
+			
+		</div>
+		</div>
+		</div>
+	
+			
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		
+		<script src="./js/bootstrap.min.js"></script>
+		
+	</body>
+</html>
