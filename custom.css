@@ -72,5 +72,16 @@
 }
 
 .cit_entry {
-	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.catnav {
+	background-color: rgba(0,168,228,.8);
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: smaller;
+}
+.catnav:hover {
+	color:black;
 }
