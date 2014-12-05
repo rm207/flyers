@@ -40,10 +40,10 @@
 AVAILLIM=<span class="availLimMessage">Limit search to available items</span>|<span class="availLimMessage">Search results limited to available items</span>
 AVAILLIM_STATS=-,o
 BOTLOGO=@screens/botlogo.html
-ICON_BUT_CANCEL=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Cancel</span></span></div></div>
-ICON_BUT_CLOSEWINDOW=<span class="button"><img src="/screens/ico_x.gif" alt=""><span class="buttonText">Close Window</span></span>
-ICON_BUT_RET2CAT=<span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Return to Catalog</span></span>
-ICON_BUT_STARTOVER=<div class="col-md-2"><span class="button"><img src="/screens/ico_startover.gif" alt=""><span class="buttonText">Start Over</span></div>
+ICON_BUT_CANCEL=<a name="ICON_BUT_CANCEL"><span onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="btn btn-default catnav"><i class="fa fa-times fa-sm"></i> cancel</div></span></a>
+ICON_BUT_CLOSEWINDOW=<a name="ICON_BUT_CLOSEWINDOW"><div class="btn btn-default catnav"><i class="fa fa-times fa-sm"></i> close window</div></a>
+ICON_BUT_RET2CAT=<a name="ICON_BUT_RET2CAT"><div class="btn btn-default catnav"><i class="fa fa-home fa-sm"></i> return to catalog</div></a>
+ICON_BUT_STARTOVER=<a name="ICON_BUT_STARTOVER"><div class="btn btn-default catnav"><i class="fa fa-undo fa-sm"></i> start over</div></a>
 FORM_FOCUS=true
 ICON_CANCEL=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Cancel</span></span></div></div>
 ICON_OK=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">OK</span></span></div></div>
@@ -72,15 +72,15 @@ XSTARTOVER=/
 BUT_STARTOVER=/
 
 # Staff
-ICON_BUT_PUBLIC=<span class="button"><img src="/screens/ico_patron.gif" alt=""><span class="buttonText">Patron View</span></span>
-ICON_BUT_STAFF=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Staff View</span></span>
+ICON_BUT_PUBLIC=<a name="ICON_BUT_PUBLIC"><div class="btn btn-default catnav"><i class="fa fa-user fa-sm"></i> patron view</div></a>
+ICON_BUT_STAFF=<a name="ICON_BUT_STAFF"><div class="btn btn-default catnav"><i class="fa fa-users fa-sm"></i> staff view</div></a>
 STAFF=1
 STAFF_LOGGEDIN_MSG=<span class="loggedInMessage">You are logged into staff mode at %s as %s</span>
 
 # General and Phrase Searching
-ICON_BUT_ANOTHER=<div class="col-md-2"><span class="button"><img src="/screens/ico_magnifyingglass.gif" alt=""><span class="buttonText">Another Search</span></span></div>
-ICON_BUT_NEWSRCH=<div class="col-md-2"><span class="button"><img src="/screens/ico_startover.gif" alt=""><span class="buttonText">Start Over</span></span></div>
-ICON_BUT_WORDSRCH=<div class="col-md-2"><span class="button"><img src="/screens/ico_magnifyingglass.gif" alt=""><span class="buttonText">Search as Words</span></span></div>
+ICON_BUT_ANOTHER=<a name="ICON_BUT_ANOTHER"><div class="btn btn-default catnav"><i class="fa fa-search fa-sm"></i> another Search</div></a>
+ICON_BUT_NEWSRCH=<a name="ICON_BUT_NEWSRCH"><div class="btn btn-default catnav"><i class="fa fa-undo fa-sm"></i> start Over</div></a>
+ICON_BUT_WORDSRCH=<a name="ICON_BUT_WORDSRCH"><div class="btn btn-default catnav"><i class="fa fa-search-plus fa-sm"></i> search as Words</div></a>
 DROP_DOWN=Xatdcoigf
 FRAMEURL=30
 IBROWSE_MAX=10000
@@ -92,8 +92,8 @@ OFFER_HISTORY=true
 # Advanced Searching
 AVS_MODIFY_TAG=X
 AVS_TAG=XYZ
-ICON_BUT_MODIFY=<div class="col-md-2"><span class="button"><img src="/screens/ico_magnifyingglass_modify.gif" alt=""><span class="buttonText">Modify Search</span></span></div>
-ICON_BUT_SHOWSIM=<div class="col-md-2"><span class="button"><img src="/screens/ico_more.gif" alt=""><span class="buttonText">More Like This</span></span></div>
+ICON_BUT_MODIFY=<a name="ICON_BUT_MODIFY"><div class="btn btn-default catnav"><i class="fa fa-search-plus fa-sm"></i> modify search</div></a>
+ICON_BUT_SHOWSIM=<a name="ICON_BUT_SHOWSIM"><div class="btn btn-default catnav"><i class="fa fa-files-o fa-sm"></i> more like this</div></a>
 ICON_REL_GROUP_1=<img src="/screens/relevance5.gif" alt="Most relevant">&nbsp;<h1 class="browseSuperEntryTitle">Most relevant titles</h1>&nbsp;
 ICON_REL_GROUP_2=<img src="/screens/relevance4.gif" alt="Highly relevant">&nbsp;<h1 class="browseSuperEntryTitle">Highly relevant titles</h1>&nbsp;
 ICON_REL_GROUP_3=<img src="/screens/relevance3.gif" alt="Very relevant">&nbsp;<h1 class="browseSuperEntryTitle">Very relevant titles</h1>&nbsp;
@@ -116,11 +116,11 @@ BODYPARAM=bgcolor="#FFFFFF"
 BRIEF=A
 BROWSE_t=245/abhnp/0|240/afklmnopr/0|700/tmnr/0|970/t/0|/abhnpv/0
 BROWSE_HEADERS=Mark|Media
-ICON_BUT_BRIEF=<span class="button"><img src="/screens/ico_browse_brief.gif" alt=""><span class="buttonText">Brief Display</span></span>
-ICON_BUT_EXTENDED=<span class="button"><img src="/screens/ico_browse_ext.gif" alt=""><span class="buttonText">Extended Display</span></span>
-ICON_BUT_LIMAVAIL=<span class="button"><img src="/screens/ico_list.gif" alt=""><span class="buttonText">Limit to Available</span></span>
-ICON_BUT_LIMIT=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Limit/Sort Search</span></span>
-ICON_BUT_UNLIMAVAIL=<span class="button"><img src="/screens/ico_list.gif" alt=""><span class="buttonText">Show All</span></span>
+ICON_BUT_BRIEF=<a name="ICON_BUT_BRIEF"><div class="btn btn-default catnav"><i class="fa fa-list fa-sm"></i> brief display</div></a>
+ICON_BUT_EXTENDED=<a name="ICON_BUT_EXTENDED"><div class="btn btn-default catnav"><i class="fa fa-list-alt fa-sm"></i> extended display</div></a>
+ICON_BUT_LIMAVAIL=<a name="ICON_BUT_LIMAVAIL"><div class="btn btn-default catnav"><i class="fa fa-check-circle-o fa-sm"></i> limit to available</div></a>
+ICON_BUT_LIMIT=<a name="ICON_BUT_LIMIT"><div class="btn btn-default catnav"><i class="fa fa fa-search-plus fa-sm"></i> limit/sort search</div></a>
+ICON_BUT_UNLIMAVAIL=<a name="ICON_BUT_UNLIMAVAIL"><div class="btn btn-default catnav"><i class="fa fa-play-circle-o fa-sm"></i> show all</div></a>
 DISPLAY_245=atd
 EXTENDED=CT
 HEADING_LENGTH=100
@@ -174,9 +174,9 @@ TABLEPARAM_BROWSE=class="table"|class="table"|class="table"|class="table"
 
 # Record Displays
 BIB_TOC_HEADER=<strong>Table of Contents</strong>
-ICON_BUT_MARC_DISPLAY=<div class="col-md-2"><span class="button"><img src="/screens/ico_marc.gif" alt=""><span class="buttonText">MARC Display</span></span></div>
-ICON_BUT_REGULAR_DISPLAY=<span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Regular Display</span></span>
-ICON_BUT_RTRNTB=<div class="col-md-2"><span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Return to Browse</span></span></div>
+ICON_BUT_MARC_DISPLAY=<a name="ICON_BUT_MARC_DISPLAY"><div class="btn btn-default catnav"><i class="fa fa-th-list fa-sm"></i> marc display</div></a>
+ICON_BUT_REGULAR_DISPLAY=<a name="ICON_BUT_REGULAR_DISPLAY"><div class="btn btn-default catnav"><i class="fa fa-list fa-sm"></i> regular display</div></a>
+ICON_BUT_RTRNTB=<a name="ICON_BUT_RTRNTB"><div class="btn btn-default catnav"><i class="fa fa-list-ol fa-sm"></i> return to browse</div></a>
 DISPLAY_856=z|true
 HOLDINGS_POS=atpR
 #HOTLINK=i^020,c^09,n^505
@@ -223,8 +223,8 @@ TABLEPARAM_RESOURCE_LICENSE=width="100%" border="0" cellpadding="0"
 TABLEPARAM_RESOURCE_RESOURCE=width="100%" border="0" cellspacing="0" cellpadding="0"
 
 # Holdings
-ICON_BUT_CARDFORM_BOX=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Show Cards in Box Format </span></span>
-ICON_BUT_CARDFORM_LIN=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Show Cards in Line Format</span></span>
+ICON_BUT_CARDFORM_BOX=<a name="ICON_BUT_CARDFORM_BOX"><div class="btn btn-default catnav"> show cards in box format</div></a>
+ICON_BUT_CARDFORM_LIN=<a name="ICON_BUT_CARDFORM_LIN"><div class="btn btn-default catnav"> show cards in line format</div></a>
 CHECKIN_BGCOLOR=ARRIVED=#FFFFFF|EXPECTED=#FFFFFF|TO BIND/BOUND=#FFFFFF|LATE=#FFFFFF|OTHER=#FFFFFF
 CHECKIN_FONTCOLOR=ARRIVED=GREEN|EXPECTED=BLACK|TO BIND/BOUND=RED|LATE=BLACK|OTHER=BLACK
 CHECKIN_STATUS=ARRIVED=Here|EXPECTED=Coming soon|TO BIND/BOUND=Being bound|LATE=Late|Other=See staff
@@ -250,11 +250,11 @@ ICON_MYLISTS_RECORD=<div class="col-md-2"><span class="button"><img src="/screen
 
 # Saving and Exporting
 #BRIEF_EXPORT=c|a|t|p
-ICON_BUT_BIBEXPORT=<div class="col-md-1"><span class="button"><img src="/screens/ico_bag_add.gif" alt=""><span class="buttonText">Add to Bag</span></span></div>
-ICON_BUT_CLEAR_MARKED=<div class="col-md-1"><span class="button"><img src="/screens/ico_bag_clear.gif" alt=""><span class="buttonText">Empty Bag</span></span></div>
-ICON_BUT_EXPORT_MULTI=<div class="col-md-1"><span class="button"><img src="/screens/ico_disc.gif" alt=""><span class="buttonText">Export Saved</span></span></div>
-ICON_BUT_EXPORT_VIEW_SAVES=<span class="button"><img src="/screens/ico_bag.gif" alt=""><span class="buttonText">View Bag</span></span>
-ICON_BUT_VIEW_SAVES=<div class="col-md-1"><span class="button"><img src="/screens/ico_bag.gif" alt=""><span class="buttonText">View Bag</span></span></div>
+ICON_BUT_BIBEXPORT=<a name="ICON_BUT_BIBEXPORT"><div class="btn btn-default catnav"><i class="fa fa-floppy-o fa-sm"></i> add to saved</div></a>
+ICON_BUT_CLEAR_MARKED=<a name="ICON_BUT_CLEAR_MARKED"><div class="btn btn-default catnav"><i class="fa fa-times fa-sm"></i> empty saved</div></a>
+ICON_BUT_EXPORT_MULTI=<a name="ICON_BUT_EXPORT_MULTI"><div class="btn btn-default catnav"><i class="fa fa-paper-plane-o fa-sm"></i> export saved</div></a>
+ICON_BUT_EXPORT_VIEW_SAVES=<a name="ICON_BUT_EXPORT_VIEW_SAVES"><div class="btn btn-default catnav"><i class="fa fa-folder-open-o fa-sm"></i> view saved</div></a>
+ICON_BUT_VIEW_SAVES=<a name="ICON_BUT_VIEW_SAVES"><div class="btn btn-default catnav"><i class="fa fa-folder-open-o fa-sm"></i> view saved</div></a>
 EMAILOP=From the library catalog|exporter|
 EXPORT_SELECT_TABLE=Sendto:browser,email,local|Format:full,brief,marc,procite,endnote
 XRECTYPE=boi
