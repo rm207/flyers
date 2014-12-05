@@ -1,0 +1,131 @@
+# General Display and Behavior
+ICON_BUT_CANCEL=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Cancel</span></span></div></div>
+ICON_BUT_CLOSEWINDOW=<span class="button"><img src="/screens/ico_x.gif" alt=""><span class="buttonText">Close Window</span></span>
+ICON_BUT_RET2CAT=<span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Return to Catalog</span></span>
+ICON_BUT_STARTOVER=<div class="col-md-2"><span class="button"><img src="/screens/ico_startover.gif" alt=""><span class="buttonText">Start Over</span></div>
+
+
+# Staff
+ICON_BUT_PUBLIC=<span class="button"><img src="/screens/ico_patron.gif" alt=""><span class="buttonText">Patron View</span></span>
+ICON_BUT_STAFF=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Staff View</span></span>
+
+
+# General and Phrase Searching
+ICON_BUT_ANOTHER=<div class="col-md-2"><span class="button"><img src="/screens/ico_magnifyingglass.gif" alt=""><span class="buttonText">Another Search</span></span></div>
+ICON_BUT_NEWSRCH=<div class="col-md-2"><span class="button"><img src="/screens/ico_startover.gif" alt=""><span class="buttonText">Start Over</span></span></div>
+ICON_BUT_WORDSRCH=<div class="col-md-2"><span class="button"><img src="/screens/ico_magnifyingglass.gif" alt=""><span class="buttonText">Search as Words</span></span></div>
+
+
+# Advanced Searching
+ICON_BUT_MODIFY=<div class="col-md-2"><span class="button"><img src="/screens/ico_magnifyingglass_modify.gif" alt=""><span class="buttonText">Modify Search</span></span></div>
+ICON_BUT_SHOWSIM=<div class="col-md-2"><span class="button"><img src="/screens/ico_more.gif" alt=""><span class="buttonText">More Like This</span></span></div>
+
+
+# Search Results
+ICON_BUT_BRIEF=<span class="button"><img src="/screens/ico_browse_brief.gif" alt=""><span class="buttonText">Brief Display</span></span>
+ICON_BUT_EXTENDED=<span class="button"><img src="/screens/ico_browse_ext.gif" alt=""><span class="buttonText">Extended Display</span></span>
+ICON_BUT_LIMAVAIL=<span class="button"><img src="/screens/ico_list.gif" alt=""><span class="buttonText">Limit to Available</span></span>
+ICON_BUT_LIMIT=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Limit/Sort Search</span></span>
+ICON_BUT_UNLIMAVAIL=<span class="button"><img src="/screens/ico_list.gif" alt=""><span class="buttonText">Show All</span></span>
+
+
+# Record Displays
+ICON_BUT_MARC_DISPLAY=<div class="col-md-2"><span class="button"><img src="/screens/ico_marc.gif" alt=""><span class="buttonText">MARC Display</span></span></div>
+ICON_BUT_REGULAR_DISPLAY=<span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Regular Display</span></span>
+ICON_BUT_RTRNTB=<div class="col-md-2"><span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Return to Browse</span></span></div>
+
+
+# Holdings
+ICON_BUT_CARDFORM_BOX=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Show Cards in Box Format </span></span>
+ICON_BUT_CARDFORM_LIN=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Show Cards in Line Format</span></span>
+
+
+# Saving and Exporting
+ICON_BUT_BIBEXPORT=<div class="col-md-1"><span class="button"><img src="/screens/ico_bag_add.gif" alt=""><span class="buttonText">Add to Bag</span></span></div>
+ICON_BUT_CLEAR_MARKED=<div class="col-md-1"><span class="button"><img src="/screens/ico_bag_clear.gif" alt=""><span class="buttonText">Empty Bag</span></span></div>
+ICON_BUT_EXPORT_MULTI=<div class="col-md-1"><span class="button"><img src="/screens/ico_disc.gif" alt=""><span class="buttonText">Export Saved</span></span></div>
+ICON_BUT_EXPORT_VIEW_SAVES=<span class="button"><img src="/screens/ico_bag.gif" alt=""><span class="buttonText">View Bag</span></span>
+ICON_BUT_VIEW_SAVES=<div class="col-md-1"><span class="button"><img src="/screens/ico_bag.gif" alt=""><span class="buttonText">View Bag</span></span></div>
+
+
+#Requesting
+ICON_BUT_REQUEST=<span class="button"><img src="/screens/ico_checkmark.gif" alt=""><span class="buttonText">Request</span></span>
+ICON_BUT_REQUEST_ALL=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Request Available</span></span></div></div>
+ICON_BUT_REQUEST_MULTI=<span class="button"><img src="/screens/ico_request_multi.gif" alt=""><span class="buttonText">Request Saved</span></span>
+ICON_BUT_REQUEST_RESET=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Reset Form</span></span></div></div>
+ICON_BUT_REQUEST_SELECTED=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Request Selected</span></span></div></div>
+
+
+# Patron Record
+ICON_BUT_PAT_CANCEL=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Cancel</span></span></div></div>
+ICON_BUT_PAT_CANCELALL=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Cancel All</span></span></div></div>
+
+ICON_BUT_PAT_CANCELMARK=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Cancel Selected</span></span></div></div>
+#ICON_BUT_PAT_CHKOUTS=
+#ICON_BUT_PAT_FINES=<span class="button"><img src="/screens/ico_payment.gif" alt=""><span class="buttonText">Fines</span></span>
+#ICON_BUT_PAT_HOLDS=
+ICON_BUT_PAT_INFO=<span class="button"><img src="/screens/ico_patron.gif" alt=""><span class="buttonText">Modify Personal Information</span></span>
+ICON_BUT_PAT_MSGS=<span class="button"><img src="/screens/ico_browse_brief.gif" alt=""><span class="buttonText">Message from the library</span></span>
+ICON_BUT_PAT_PIN=<span class="button"><img src="/screens/ico_pin.gif" alt=""><span class="buttonText">Modify PIN</span></span>
+ICON_BUT_PAT_RENEWALL=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Renew All</span></span></div></div>
+ICON_BUT_PAT_RENEWMARK=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Renew Marked</span></span></div></div>
+ICON_BUT_PAT_SORTBYCHKOUT=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Sort by Checkout</span></span></div></div>
+ICON_BUT_PAT_SORTBYDUE=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Sort by Due Date</span></span></div></div>
+ICON_BUT_PAT_SUBMIT=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Submit</span></span></div></div>
+ICON_BUT_PSTARTOVER=<span class="button"><img src="/screens/ico_startover.gif" alt=""><span class="buttonText">Start Over</span></span>
+
+ICON_BUT_UPDATE_HOLDS=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Update List</span></span></div></div>
+
+
+# My Millennium
+ICON_BUT_PAT_PSEARCH_REMOVE=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Delete All Searches</span></span></div></div>
+
+ICON_BUT_PAT_PSEARCH_UPDATE=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Update List</span></span></div></div>
+
+ICON_BUT_PAT_GETPSAVEDRECS=<span class="button"><img src="/screens/ico_magnifyingglass.gif" alt=""><span class="buttonText">Preferred Searches</span></span>
+
+
+# ILL
+ICON_BUT_ILL_CANCEL=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Cancel</span></span></div></div>
+ICON_BUT_ILL_FORM=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Interlibrary Loan Form</span></span>
+ICON_BUT_ILL_HOME=<span class="button"><img src="/screens/ico_up.gif" alt=""><span class="buttonText">New Request</span></span>
+ICON_BUT_PAT_ILL_FORM=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Interlibrary Loan Form</span></span>
+ICON_BUT_PAT_ILL=<span class="button"><img src="/screens/ico_gear.gif" alt=""><span class="buttonText">Interlibrary Loan</span></span>
+
+
+# INN-Reach
+INNREACH=131.238.16.25&<span class="button"><img src="/screens/ohiolink.gif" alt=""><span class="buttonText">Search Ohiolink</span></span>@olc1.ohiolink.edu(a=a;t=t;d=d;c=c;i=i;q=q;o=o;j=t;g=g;u=u;X=X;Y=Y*)
+
+
+# Media Management
+ICON_BUT_RET2CRS=<span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Return to Course</span></span>
+
+
+# Featured Lists
+ICON_BUT_PREVSCRN=<span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Back</span></span>
+ICON_BUT_RET2FEAT=<span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Back</span></span>
+
+
+# WebBridge/Pathfinder Pro
+ICON_BUT_CLOSEFRAME=<span class="button"><img src="/screens/ico_x.gif" alt=""><span class="buttonText">Close Frame</span></span>
+ICON_BUT_RESOURCELINK=<div id="resourcelink"><span class="button"><img src="/screens/ico_globe.gif" alt=""><span class="buttonText">Other Resources</span></span></div>
+ICON_BUT_RET2RESOURCE=<div id="resourcelink"><span class="button"><img src="/screens/ico_back.gif" alt=""><span class="buttonText">Back</span></span></div>
+
+
+# Z39.50
+ICON_BUT_EMAIL=Email
+ICON_BUT_NEXTREC=<span class="button"><span class="buttonText" id="buttonNextRecord">Next Record</span><img src="/screens/ico_next.gif" alt=""></span>
+ICON_BUT_PREVREC=<span class="button"><img src="/screens/ico_previous.gif" alt=""><span class="buttonText">Previous Record</span></span>
+ICON_BUT_Z39_ANOTHER=Another Database
+ICON_BUT_Z39_REQUEST=<span class="button"><img src="/screens/ico_checkbox.gif" alt=""><span class="buttonText">Request</span></span>
+ICON_BUT_Z39SEARCH=<span class="button"><img src="/screens/ico_magnifyingglass.gif" alt=""><span class="buttonText">Search Other Libraries</span></span>
+
+
+# Partner
+ICON_BUT_RETHOME=<span class="button"><img src="/screens/ico_up.gif" alt=""><span class="buttonText">Home</span></span>
+
+
+# Program Display
+ICON_BUT_PAT_PROGRAMS=<span class="button"><img src="/screens/ico_calendar.gif" alt=""><span class="buttonText">Library Events</span></span>
+ICON_BUT_PAT_SORTBYDATE=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Sort by Date</span></span></div></div>
+ICON_BUT_PAT_SORTBYNAME=<div onmousedown="this.className='pressedState';" onmouseout="this.className='';" onmouseup="this.className='';"><div class="buttonSpriteDiv"><span class="buttonSpriteSpan1"><span class="buttonSpriteSpan2">Sort by Name</span></span></div></div>
