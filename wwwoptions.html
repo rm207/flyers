@@ -183,8 +183,8 @@ NO_COPIES=Currently no copies available
 SORT_BROWSE=t:Title|a:Author|c:Year|r:Reverse Year|n:Call Number|m:Material Type
 SORT_MEDIA=@amcdji
 SUPPRESS_YEAR=False
-TABLEPARAM_BRIEFCIT=true|class="table"
-TABLEPARAM_BROWSE=class="table"|class="table"|class="table"
+TABLEPARAM_BRIEFCIT=true|class="table TABLEPARAM_BRIEFCIT"
+TABLEPARAM_BROWSE=class="table TABLEPARAM_BROWSE1"|class="table TABLEPARAM_BROWSE2"|class="table TABLEPARAM_BROWSE3"
 
 # Record Displays
 BIB_TOC_HEADER=<strong>Table of Contents</strong>
@@ -204,17 +204,17 @@ ICON_RECORDLINK=<div class="ICON_RECORDLINK">PERMANENT LINK TO RECORD <a id="ICO
 LINK856TEXT=Connect to
 MARC=yes
 SHOWOREC=no_cdate
-TABLEPARAM_BIB=class="table"
-TABLEPARAM_BIB_DETAIL=class="table"
-TABLEPARAM_BIB_HOLDINGS=class="table"
-TABLEPARAM_BIB_HOLDS=class="table"
-TABLEPARAM_BIB_INFO=class="table"
-TABLEPARAM_BIB_ITEMS=class="table"
-TABLEPARAM_BIB_LINKS=class="table"
-TABLEPARAM_BIB_ORDER=class="table"
-TABLEPARAM_BIB_PAGER=class="table"
-TABLEPARAM_BIB_THUMBNAILS=class="table"
-TABLEPARAM_BIB_TOC=class="table"
+TABLEPARAM_BIB=class="table TABLEPARAM_BIB"
+TABLEPARAM_BIB_DETAIL=class="table TABLEPARAM_BIB_DETAIL"
+TABLEPARAM_BIB_HOLDINGS=class="table TABLEPARAM_BIB_HOLDINGS"
+TABLEPARAM_BIB_HOLDS=class="table TABLEPARAM_BIB_HOLDS"
+TABLEPARAM_BIB_INFO=class="table TABLEPARAM_BIB_INFO"
+TABLEPARAM_BIB_ITEMS=class="table TABLEPARAM_BIB_ITEMS"
+TABLEPARAM_BIB_LINKS=class="table TABLEPARAM_BIB_LINKS"
+TABLEPARAM_BIB_ORDER=class="table TABLEPARAM_BIB_ORDER"
+TABLEPARAM_BIB_PAGER=class="table TABLEPARAM_BIB_PAGER"
+TABLEPARAM_BIB_THUMBNAILS=class="table TABLEPARAM_BIB_THUMBNAILS"
+TABLEPARAM_BIB_TOC=class="table TABLEPARAM_BIB_TOC"
 #WEBPUBDEF=true
 
 # Electronic Resource Management
@@ -230,12 +230,12 @@ RESOURCE_ADVISORY=k
 RESOURCE_HOLDINGS_FIELDS=Title:VbT|Coverage:Vch|Full Text:VcY
 RESOURCE_HOLDINGS_MAX=12
 RESOURCE_LICENSE_FIELDS=Permitted:Vlw|Restricted:Vlx|Available to:Vlf|Access notes:Vla
-TABLEPARAM_BIB_LICENSE=class="table"
-TABLEPARAM_BIB_RESOURCE=class="table"
-TABLEPARAM_BIB_RESOURCE_BRIEF=class="table"
-TABLEPARAM_RESOURCE_BIB=class="table"
-TABLEPARAM_RESOURCE_LICENSE=class="table"
-TABLEPARAM_RESOURCE_RESOURCE=class="table"
+TABLEPARAM_BIB_LICENSE=class="table TABLEPARAM_BIB_LICENSE"
+TABLEPARAM_BIB_RESOURCE=class="table TABLEPARAM_BIB_RESOURCE"
+TABLEPARAM_BIB_RESOURCE_BRIEF=class="table TABLEPARAM_BIB_RESOURCE_BRIEF"
+TABLEPARAM_RESOURCE_BIB=class="table TABLEPARAM_RESOURCE_BIB"
+TABLEPARAM_RESOURCE_LICENSE=class="table TABLEPARAM_RESOURCE_LICENSE"
+TABLEPARAM_RESOURCE_RESOURCE=class="table TABLEPARAM_RESOURCE_RESOURCE"
 
 # Holdings
 ICON_BUT_CARDFORM_BOX=<span class="ICON_BUT_CARDFORM_BOX"><div class="btn btn-default catnav"> show cards in box format</div></span>
@@ -314,7 +314,7 @@ ICON_CONFIRM_YES=<span class="ICON_CONFIRM_YES"><div class="btn btn-default catn
 ICON_CONFIRM_NO=<span class="ICON_CONFIRM_NO"><div class="btn btn-default catnav">No</div><span>
 ICON_PAT_CANCELALL=<span class="ICON_PAT_CANCELALL"><div class="btn btn-default catnav">Cancel All</div><span>
 ICON_PAT_CANCELMARK=<span class="ICON_PAT_CANCELMARK"><div class="btn btn-default catnav">Cancel Selected</div><span>
-ICON_PIN_RESET=<span class="ICON_PIN_RESET"><div class="btn btn-default catnav">Forget Your PIN?</div><span>
+ICON_PIN_RESET=
 ICON_SORTPUDATE=<span class="ICON_SORTPUDATE"><div class="btn btn-default catnav">Sort by Pickup</div><span>
 ICON_SORTREQDATE=<span class="ICON_SORTREQDATE"><div class="btn btn-default catnav">Sort by Request</div><span>
 MIN_PIN_LENGTH=6
@@ -332,8 +332,8 @@ PIN_RESET=true
 #PIN_RESET_EMAIL=Request to reset your library PIN|INSERT LIBRARY FROM EMAIL HERE|INSERT LIBRARY REPLY-TO EMAIL HERE
 PSTARTOVER=/
 SEEPUDATE=true
-TABLEPARAM_PATDISP=class="table"
-TABLEPARAM_PATFUNC=class="table"
+TABLEPARAM_PATDISP=class="table TABLEPARAM_PATDISP"
+TABLEPARAM_PATFUNC=class="table TABLEPARAM_PATFUNC"
 TIMEOUT_POPUP=600
 
 # My Millennium
@@ -420,7 +420,7 @@ ERESERVE=[0123456789]
 RSRV_FORMAT=true
 #RSRV_HEADER=Materials for this Course
 #RSRV_HEADER=Featured Titles This Month
-TABLEPARAM_RSRV_BIBS=class="table"
+TABLEPARAM_RSRV_BIBS=class="table TABLEPARAM_RSRV_BIBS"
 
 # Featured Lists
 ICON_BUT_PREVSCRN=<span class="ICON_BUT_PREVSCRN"><div class="btn btn-default catnav"><i class="fa fa-long-arrow-left fa-sm"></i> back</div></span>
@@ -546,7 +546,7 @@ ICON_ADD_TO_WAITLIST=<span class="ICON_REGISTER"><div class="btn btn-default cat
 ICON_VIEW_ADDITIONAL_SESSIONS=<span class="ICON_REGISTER"><div class="btn btn-default catnav">View Additional Sessions</div></span>
 ICON_HIDE_ADDITIONAL_SESSIONS=<span class="ICON_REGISTER"><div class="btn btn-default catnav">Hide Additional Sessions</div></span>
 ICON_PROGRAM_CAL=<span class="ICON_REGISTER"><div class="btn btn-default catnav">Events Calendar</div></span>
-TABLEPARAM_PROG_SECTIONS=class="table"
+TABLEPARAM_PROG_SECTIONS=class="table TABLEPARAM_PROG_SECTIONS"
 
 
 </pre>
