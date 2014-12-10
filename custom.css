@@ -85,3 +85,11 @@
 .catnav:hover {
 	color:black;
 }
+
+.TABLEPARAM_BIB_ITEMS {
+	border: 1px solid #ddd;
+}
+
+.bibItemsHeader {
+	text-align:left;
+}

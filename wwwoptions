@@ -1,4 +1,3 @@
-
 #Directory:
 # General Display and Behavior
 # Staff
@@ -193,7 +192,7 @@ TABLEPARAM_BIB_DETAIL=class="table TABLEPARAM_BIB_DETAIL"
 TABLEPARAM_BIB_HOLDINGS=class="table TABLEPARAM_BIB_HOLDINGS"
 TABLEPARAM_BIB_HOLDS=class="table TABLEPARAM_BIB_HOLDS"
 TABLEPARAM_BIB_INFO=class="table TABLEPARAM_BIB_INFO"
-TABLEPARAM_BIB_ITEMS=class="table TABLEPARAM_BIB_ITEMS"
+TABLEPARAM_BIB_ITEMS=class="table table-striped TABLEPARAM_BIB_ITEMS"
 TABLEPARAM_BIB_LINKS=class="table TABLEPARAM_BIB_LINKS"
 TABLEPARAM_BIB_ORDER=class="table TABLEPARAM_BIB_ORDER"
 TABLEPARAM_BIB_PAGER=class="table TABLEPARAM_BIB_PAGER"
@@ -413,8 +412,8 @@ ICON_BUT_RET2FEAT=<span class="ICON_BUT_RET2FEAT"><div class="btn btn-default ca
 
 # Content Linking and Other Resources
 # If your system uses SSL, use the https example, to avoid secure/nonsecure warning on Internet Explorer.
-#BIBIMAGE=http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=PUTACCOUNTHERE&amp;Password=PUTACCOUNTHERE&amp;Return=T&amp;Type=S&amp;Value=%s&amp;erroroverride=1|I|http://contentcafe2.btol.com/ContentCafeClient/ContentCafe.aspx?UserID=PUTACCOUNTHERE&amp;Password=PUTACCOUNTHERE&amp;ItemKey=%s&amp;Options=Y
-#BIBIMAGE=https://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=PUTACCOUNTHERE&amp;Password=PUTACCOUNTHERE&amp;Return=T&amp;Type=S&amp;Value=%s&amp;erroroverride=1|I|https://contentcafe2.btol.com/ContentCafeClient/ContentCafe.aspx?UserID=PUTACCOUNTHERE&amp;Password=PUTACCOUNTHERE&amp;ItemKey=%s&amp;Options=Y
+
+BIBIMAGE=http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=UND67108&Password=CC60078&Return=1&Type=S&Value=%s&erroroverride=1&|i|http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=UND67108&Password=CC60078&Return=1&Type=L&Value=%s&erroroverride=1
 BIBIMAGE_TEXT=Book Cover
 BUT_ENCYCPD=/screens/encycpd.gif
 BUT_FULL_TEXT=/screens/full_text.gif

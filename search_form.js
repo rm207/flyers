@@ -1,5 +1,5 @@
 <script type="text/javascript">
-$( document ).ready(function() {
+function() {
 	//modify some of the elements in our top search form to enable responsive function
 	if (document.getElementsByName('searchtool')) {	
 		//remove the border around the searchtool
@@ -31,5 +31,5 @@ $( document ).ready(function() {
 			document.getElementById('sortbutton').className = 'btn btn-default';
 		}//end if
 	}//end if
-});
+};
 </script>
