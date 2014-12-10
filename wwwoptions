@@ -133,7 +133,7 @@ ICON_PAGING_PREV=<span class="ICON_PAGING_PREV"><div class="btn btn-default catn
 ICON_PROGRAM=<span class="ICON_PROGRAM"><div class="btn btn-default catnav">Library Event</div></span>
 ICON_RESOURCE=<span class="ICON_RESOURCE"></span>
 ICON_SAVEALLPAGE=<span class="ICON_SAVEALLPAGE"><div class="btn btn-default catnav">save all on page</div></span>
-ICON_SAVEMARKED=<span class="ICON_SAVEMARKED"><div class="btn btn-default catnav">save marked</div></span>
+ICON_SAVEMARKED=<script type="text/javascript">search_form_style();</script><span class="ICON_SAVEMARKED"><div class="btn btn-default catnav">save marked</div></span>
 IMAGE_MATTYPE-=/screens/media_book.gif
 IMAGE_MATTYPEa=/screens/media_book.gif
 IMAGE_MATTYPEb=/screens/media_archive.gif
