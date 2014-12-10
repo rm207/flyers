@@ -179,7 +179,7 @@ HOLDINGS_POS=atpR
 #HOTLINK=i^020,c^09,n^505
 ICON_BIB_HOLDINGS_ITEMS=View Copies
 #ICON_NEARBY=<span class="ICON_NEARBY"><div class="btn btn-default catnav">Nearby Items</div></span>
-ICON_NEARBY=<span class="ICON_NEARBY"> Nearby Items </span>
+ICON_NEARBY=<span class="ICON_NEARBY">Nearby Items</span>
 ICON_BIB_PAGING_CAPTION= 
 ICON_BIB_PAGING_NEXT=<span class="ICON_BIB_PAGING_NEXT"><div class="btn btn-default catnav">Next Record <i class="fa fa-long-arrow-right fa-sm"></i></div></span>
 ICON_BIB_PAGING_PREV=<span class="ICON_BIB_PAGING_PREV"><div class="btn btn-default catnav"><i class="fa fa-long-arrow-left fa-sm"></i> Previous Record</div></span>
