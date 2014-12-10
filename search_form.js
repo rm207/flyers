@@ -3,7 +3,8 @@ function search_form_style() {
 	//modify some of the elements in our top search form to enable responsive function
 	if (document.getElementsByName('searchtool')) {	
 		//remove the border around the searchtool
-		document.getElementsByClassName('browseSearchtool')[0].className = '';
+		//don't have to do this now
+		//document.getElementsByClassName('browseSearchtool')[0].className = '';
 		
 		//change the form class for responsive function
 		var target_form = document.getElementsByName('searchtool')[0];
