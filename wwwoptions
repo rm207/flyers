@@ -245,7 +245,7 @@ LOC_rc4*=http://library2.udayton.edu/map/4small.gif
 LOC_rc5*=http://library2.udayton.edu/map/5small.gif
 LOC_rc6*=http://library2.udayton.edu/map/6small.gif
 LOC_rd*=http://library2.udayton.edu/map/5small.gif
-LOC_cc*=http://library2.udayton.edu/map/CMC.gif
+#LOC_cc*=http://library2.udayton.edu/map/CMC.gif
 LOC_mn1=http://library2.udayton.edu/map/1small.jpg
 
 # Electronic Resource Management
