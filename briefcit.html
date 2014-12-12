@@ -1,12 +1,12 @@
+
 <!-- briefcit.html start -->
 <tr class="cit_entry">
 	<td>
 
-	
 		<table class="table">
-		<thead>
+		<tbody>
 			<tr>
-					<th class="col-md-1">
+					<td class="col-md-1">
 					<!-- column 1 -->
 					
 						<div class="checkbox" style="
@@ -36,27 +36,45 @@
 						<!--{media}-->
 					
 					<!-- /column 1 -->
-					</th>
+					</td>
 					
-					<th class="col-md-1">
+					<td class="col-md-1">
 					<!-- column 2 -->
-					
-					col 2
-					
+
+						<div class="briefcit_bookjacket">
+							<!--{bookjacket}-->
+
+<!--{bookjacket}-->
+
+							<!--{bookjacket}-->		
+						</div>
+						<script type="text/javascript">
+						var bookjacket_div = $("div:last")
+						console.log (bookjacket_div);
+						</script>
+
+						<div>
+							<!--{request}-->
+
+<!--{request}-->
+
+							<!--{request}-->
+						</div>
+
 					<!-- /column 2 -->
-					</th>
+					</td>
 					
 					
-					<th class="col-md-10">
+					<td class="col-md-10">
 					<!-- column 3 -->
 					
 					col 3
 					
 					<!-- /column 3 -->
-					</th>
+					</td>
 					
 			</tr>
-		</thead>
+		</tbody>
 		</table>
 	
 	
