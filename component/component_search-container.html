@@ -43,10 +43,11 @@
 				<li id="tab-keyword" class="active"><a href="#keyword" data-toggle="tab">Keyword</a></li>
 				<li id="tab-advanced"><a href="#advanced" data-toggle="tab">Advanced Search</a></li>
 				<li id="tab-author"><a href="#author" data-toggle="tab">Author / Title</a></li>
-				<li id="tab-journal"><a href="#journal" data-toggle="tab">Journal</a></li>
+				<li id="tab-subject"><a href="#subject" data-toggle="tab">Subject</a></li>
+				<!-- <li id="tab-journal"><a href="#journal" data-toggle="tab">Journal</a></li> -->
 				<li id="tab-database"><a href="#database" data-toggle="tab">Database</a></li>				
-				<li id="tab-database"><a href="#reserves" data-toggle="tab">Reserve</a></li>
 				<li id="tab-numbers"><a href="#numbers" data-toggle="tab">Number</a></li>
+				<li id="tab-database"><a href="#reserves" data-toggle="tab">Reserve</a></li>
 			</ul>
 		</div>
 
@@ -55,10 +56,11 @@
 				<li id="pill-keyword" class="active"><a href="#keyword" data-toggle="tab">Keyword</a></li>
 				<li id="pill-advanced"><a href="#advanced" data-toggle="tab">Advanced Search</a></li>
 				<li id="pill-author"><a href="#author" data-toggle="tab">Author / Title</a></li>
-				<li id="pill-journal"><a href="#journal" data-toggle="tab">Journal</a></li>
+				<li id="pill-subject"><a href="#subject" data-toggle="tab">Subject</a></li>
+				<!-- <li id="pill-journal"><a href="#journal" data-toggle="tab">Journal</a></li> -->
 				<li id="pill-database"><a href="#database" data-toggle="tab">Database</a></li>
-				<li id="pill-numbers"><a href="#reserves" data-toggle="tab">Reserve</a></li>
 				<li id="pill-numbers"><a href="#numbers" data-toggle="tab">Number</a></li>
+				<li id="pill-numbers"><a href="#reserves" data-toggle="tab">Reserve</a></li>
 			</ul>
 		</div>
 		
@@ -116,7 +118,7 @@
 		</div>
 		<!-- /KEYWORD BASIC -->
 				
-			</div>
+			</div>			
 			
 			<div class="tab-pane" id="advanced">
 				<!--<h1>Advanced</h1>
@@ -418,7 +420,7 @@
 			
 			
 			<div class="tab-pane" id="author">
-<!-- 				<h1>Author</h1>
+				<!-- <h1>Author</h1>
 				<p>Author Author Author Author Author Author Author Author Author Author Author Author </p> -->
 
 		<!-- AUTHOR_TITLE-->
@@ -508,6 +510,9 @@
 							<li><em>Of Mice and Men</em></li>
 							<li><em>To Kill A Mockingbird</em></li>
 							<li><em>Alice's Adventures in Wonderland</em></li>
+							<li><em>Harvard Business Review</em></li>
+							<li><em>Harvard</em></li>
+							<li><em>Nature</em></li>
 						</ul>
 					</div>
 				</div>
@@ -519,6 +524,65 @@
 		<!-- /AUTHOR_TITLE -->
 
 			</div><!-- /author search tab -->
+			
+			
+			<div class="tab-pane" id="subject">
+				<!-- <h1>Subject</h1>
+				<p>Subject Subject Subject Subject Subject Subject Subject Subject Subject Subject</p> -->
+			
+		<!-- SEARCH_SUBJECT-->
+		<div id="SEARCH_SUBJECT">
+		<!--              -->			
+		
+			<form class="form-horizontal" role="form" action="/search/d" method="get">
+
+				<span class="help-block">Enter Search Terms For <strong>Subject</strong></span>
+			
+				<div class="form-group">
+					<label for="input_author" class="col-md-1 control-label">Subject: </label>
+					<div class="col-md-8">
+						<input name="SEARCH" type="text" class="form-control" id="input_author" placeholder="Enter Subject">
+					</div>
+					
+					<div class="col-md-3">
+						<select name="sortdropdown" id="sortdropdown_author" class="form-control">
+							<option value="-">System Sorted</option> 
+							<option value="t"> Title</option> 
+							<option value="a"> Author</option> 
+							<option value="c"> Year</option> 
+							<option value="r"> Reverse Year</option> 
+							<option value="n"> Call Number</option> 
+							<option value="m"> Material Type</option> 
+						</select>
+					</div>
+					
+				</div>
+											
+				<div class="form-group">
+					<div class="col-md-offset-1 col-md-11">
+						<button name="SUBMIT" type="submit" class="btn btn-default">Search</button>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-md-offset-1 col-md-11">
+						Examples:
+						<ul>
+							<li>Children's Rights</li>
+							<li>Motion Picture</li>
+							<li>United States History Civil War, 1861-1865</li>
+						</ul>
+					</div>
+				</div>
+				
+			</form>
+						
+		<!--               -->
+		</div>
+		<!-- /SEARCH_SUBJECT -->
+			
+			</div>
+			<!-- /subject search tab -->
 			
 			<div class="tab-pane" id="journal">
 				<!-- <h1>Journal</h1>
@@ -576,7 +640,8 @@
 		</div>
 		<!-- /SEARCH_JOURNAL -->
 				
-			</div> <!-- /journal search tab -->
+			</div> 
+			<!-- /journal search tab -->
 			
 			<div class="tab-pane" id="database">
 				<!-- <h1>Database</h1>
@@ -864,15 +929,112 @@
 		</div>
 		<!-- /SEARCH_DATABASES-->
 				
-			</div> <!-- /database search tab -->
+			</div> 
+			<!-- /database search tab -->
 			
 			<div class="tab-pane" id="reserves">
-				<h1>Reserve</h1>
-				<p>Reserve Reserve Reserve Reserve Reserve Reserve Reserve Reserve Reserve Reserve </p>
+				<!-- <h1>Reserve</h1>
+				<p>Reserve Reserve Reserve Reserve Reserve Reserve Reserve Reserve Reserve Reserve </p> -->
+				
+		<!-- SEARCH_RESERVE-->
+		<div id="SEARCH_RESERVE">
+		<!--              -->			
+		
+			<form class="form-horizontal" role="form" action="/search/r" method="get">
 
+				<span class="help-block">Enter Search Terms For <strong>Course Name</strong></span>
+			
+				<div class="form-group">
+					<label for="input_course" class="col-md-1 control-label">Course Name: </label>
+					<div class="col-md-8">
+						<input name="SEARCH" type="text" class="form-control" id="input_course" placeholder="Enter Course Name">
+					</div>
+					
+					<div class="col-md-3">
+						<select name="sortdropdown" id="sortdropdown_course" class="form-control">
+							<option value="-">System Sorted</option> 
+							<option value="t"> Title</option> 
+							<option value="a"> Author</option> 
+							<option value="c"> Year</option> 
+							<option value="r"> Reverse Year</option> 
+							<option value="n"> Call Number</option> 
+							<option value="m"> Material Type</option> 
+						</select>
+					</div>
+					
+				</div>
+											
+				<div class="form-group">
+					<div class="col-md-offset-1 col-md-11">
+						<button name="SUBMIT" type="submit" class="btn btn-default">Search</button>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-md-offset-1 col-md-11">
+						Examples:
+						<ul>
+							<li>ENG 101</li>
+							<li>BAR EXAM</li>
+							<li>MUSIC THERAPY</li>
+						</ul>
+					</div>
+				</div>
 				
+			</form>
+			
+			<hr>
+			
+			<form class="form-horizontal" role="form" action="/search/p" method="get">
+
+				<span class="help-block">Enter Search Terms For <strong>Professor Name</strong></span>
+			
+				<div class="form-group">
+					<label for="input_input_professor" class="col-md-1 control-label">Professor Name: </label>
+					<div class="col-md-8">
+						<input name="SEARCH" type="text" class="form-control" id="input_professor" placeholder="Enter Professor Name">
+					</div>
+					
+					<div class="col-md-3">
+						<select name="sortdropdown" id="sortdropdown_professor" class="form-control">
+							<option value="-">System Sorted</option> 
+							<option value="t"> Title</option> 
+							<option value="a"> Author</option> 
+							<option value="c"> Year</option> 
+							<option value="r"> Reverse Year</option> 
+							<option value="n"> Call Number</option> 
+							<option value="m"> Material Type</option> 
+						</select>
+					</div>
+					
+				</div>
+											
+				<div class="form-group">
+					<div class="col-md-offset-1 col-md-11">
+						<button name="SUBMIT" type="submit" class="btn btn-default">Search</button>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-md-offset-1 col-md-11">
+						Examples:
+						<ul>
+							<li>ENG 101</li>
+							<li>BAR EXAM</li>
+							<li>MUSIC THERAPY</li>
+						</ul>
+					</div>
+				</div>
 				
-			</div> <!-- /reserves search tab -->
+			</form>
+						
+		<!--               -->
+		</div>
+		<!-- /SEARCH_RESERVE -->
+				
+	
+			</div> 
+			<!-- /reserves search tab -->
 			
 			
 			<div class="tab-pane" id="numbers">
@@ -1109,7 +1271,8 @@
 		</div>
 		<!-- /SEARCH_NUMBERS -->
 
-			</div> <!-- /numbers search tab -->
+			</div> 
+			<!-- /numbers search tab -->
 			
 		</div>
 	</div>
@@ -1144,6 +1307,11 @@
 					$('#mobile_tabs a[href="#author"]').tab('show');
 					console.log("author: ");
 					break;
+					
+				case "/search/d":
+					$('#desktop_tabs a[href="#subject"]').tab('show');
+					$('#mobile_tabs a[href="#subject"]').tab('show');
+					console.log("subject: ");
 
 				case "/search/j":
 					$('#desktop_tabs a[href="#journal"]').tab('show');
