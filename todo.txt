@@ -1,0 +1,7 @@
+*change font?
+'Alright Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+*move jquery.min.js to the server so that the navigation works when not logged into clean access
+
+*fix javascript for the desktop and mobile view so that the navigation view changes when you switch viewports.
+
