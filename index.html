@@ -1,58 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
 <meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> <!-- Bootstrap --> <link href="/screens/bootstrap.min.css" rel="stylesheet"> <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> <script src="/screens/jquery.min.js"></script> <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"><!-- Custom CSS --> <link href="/screens/custom.css" rel="stylesheet"> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]-->
 	</head>
 	<body>
 	
-		<!-- DESKTOP_HEADER -->
-		<!-- requires css class .desktop_logo -->
-		<div id="DESKTOP_HEADER">
-		<!--                -->
-		
-		<div class="visible-lg visible-md">
-			<div class="desktop_header" style="
-				border-top: 5px solid #d52728;
-				background-repeat: no-repeat;
-				padding-left: 40px;
-				padding-top: 15px;
-				position: relative;
-			">
-				<a href="http://www.udayton.edu">
-					<div class="desktop_logo" style="
-					">
-					</div>
-				</a>
-			</div>
-			<div class="header_bottom desktop_header_bottom" style="
-				padding-top: 10px;
-				padding-left: 15px;
-				background-color: rgba(0,168,228,.8);
-				text-transform: uppercase;
-				font-family: 'Champion Lightwt A', Helvetica,Arial,sans-serif;
-				letter-spacing: 2px;
-				font-weight: 400;
-				color: #fff;
-				position: relative;
-				text-transform: uppercase;
-				font-size: 44px;
-				line-height: 50px;
-			">
-				<div><a href="/" style="color: inherit;">Libraries Catalog</a></div>
-			</div>
-		</div>
-
-		<!--                 -->
-		</div>
-		<!-- /DESKTOP_HEADER -->
-
-		<!-- MOBILE_HEADER -->
-		<!-- also include custom class .mobile_logo -->
-		<div id="MOBILE_HEADER">
+		<!-- HEADER -->
+		<div id="HEADER">
 		<!--               -->
 		
-		<div class="visible-sm visible-xs">
+		<!-- <div class="visible-sm visible-xs"> -->
+		<div>
 		
 		<div class="mobile_header" style="
 			padding-left: 15px;
@@ -70,32 +28,41 @@
 				</a>
 		</div>
 		
-		<!-- mobile navbar -->		
+		<!-- mobile navbar -->
+		<div class="visible-sm visible-xs">
 		<nav class="navbar navbar-default" role="navigation" style="
-			background-color: rgba(0,168,228,.8);
+			//background-color: rgba(0,168,228,.8);
 			border-radius: 0px;
 			border: 0px;
 			margin-bottom:0px;
+			//border-bottom: 5px solid #d52728;
+			//border-bottom: 5px solid rgba(0,168,228,.8);
+			border-bottom: 5px solid #333;
 		">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
+				<div class="navbar-header" style="
+					background-color: #fff;
+				">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile_navbar">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/" style="
-						font-family: 'Champion Lightwt A', Helvetica,Arial,sans-serif;
-						letter-spacing: 1px;
+					<a class="header_link navbar-brand" href="/" style="
+						//font-family: 'Champion Lightwt A', Helvetica,Arial,sans-serif;
+						font-family: chronic;
+						background-color: #fff;
+						//letter-spacing: 1px;
 						font-weight: 400;
-						color: #fff;
-						font-size: 23px;
+						color: #d52728;
+						//font-size: 23px;
+						font-size:22px;
 						line-height: 27px;
 						position: relative;
-						text-transform: uppercase;
-					">LIBRARIES CATALOG</a>
+						//text-transform: uppercase;
+					">Libraries Catalog</a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -155,14 +122,41 @@
 					 
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
-		</nav>		
+		</nav>
+		</div>
 		<!-- /mobile navbar -->
+		
+		
+		<!-- desktop header -->
+		
+		<div class="visible-lg visible-md header_bottom desktop_header_bottom" style="
+				//font-family: 'Champion Lightwt A', Helvetica,Arial,sans-serif;
+				font-family: chronic;
+				padding-top: 10px;
+				padding-left: 15px;
+				//background-color: rgba(0,168,228,.8);
+				//text-transform: uppercase;
+				//letter-spacing: 2px;
+				font-weight: 400;
+				color: #d52728;
+				position: relative;
+				font-size: 34px;
+				line-height: 50px;
+				//border-bottom: 5px solid #d52728;
+				//border-bottom: 5px solid rgba(0,168,228,.8);
+				border-bottom: 5px solid #333;
+				padding-bottom: 10px;
+			">
+				<a class="header_link" href="/" style="color: inherit;">Libraries Catalog</a>
+			</div>
+		
+		<!-- /desktop header -->
 		
 		</div>
 		
 		<!--               -->
 		</div>
-		<!-- /MOBILE_HEADER-->
+		<!-- /HEADER-->
 	
 		<!-- MAIN PAGE BODY -->
 		
@@ -170,7 +164,7 @@
 		<div class="container-fluid">
 		<div class="row">
 		
-			<div class="col-md-9">
+			<div class="col-md-9 col-md-push-3">
 			
 			<!-- BODY AREA -->
 			<div id="BODY_AREA">
@@ -315,7 +309,7 @@
 		
 		<!-- *** -->
 		<!-- un-comment the tag <form class="form-horizontal" role="form"> below to test how it will look locally -->
-		<!-- <form class="form-horizontal" role="form"> -->
+		<form class="form-horizontal" role="form">
 		
 			<span class="help-block">Enter Search Terms For <strong>Advanced Search</strong></span>
 			<!-- limit 1 -->
@@ -1507,114 +1501,119 @@
 			<!-- /BODY AREA -->
 
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 col-md-pull-9">
 			
-				<!-- NAVIGATION_WIDGET -->
-				<!-- include custom class ".nav_widget>li>a" -->
-				<div id="NAVIGATION_WIDGET">
-				<!--                   -->
+		<!-- NAVIGATION_WIDGET -->
+		<!-- include custom class ".nav_widget>li>a" -->
+		<div id="NAVIGATION_WIDGET">
+		<!--                   -->
 
-				<div class="widget" style="
-					border-top: 8px solid #d52728;
-					box-shadow: 0 0 1px #666 inset;
-					padding: 20px;
-					margin-bottom: 30px;
-					margin-top: 10px;
-				">
-					<ul class="nav nav-list nav_widget">
+		<div class="widget" style="
+			padding-top: 12px;
+			//border-top: 8px solid #d52728;
+			//box-shadow: 0 0 1px #666 inset;
+			//padding: 20px;
+			//margin-bottom: 30px;
+			//margin-top: 10px;
+		">
+			<ul class="nav nav-list nav_widget">
+				<li>
+					<a href="/patroninfo"> 
+					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+					Your Library Account
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true" style="
+						background-image: none;
+					">Libraries <span class="caret"></span></a>
+					<ul class="dropdown-menu nav_widget" role="menu">
 						<li>
-							<a href="/patroninfo"> 
+							<a href="http://www.udayton.edu/libraries/">
 							<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-							Your Library Account
-							</a>
-						</li>
-						
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true" style="
-								background-image: none;
-							">Libraries <span class="caret"></span></a>
-							<ul class="dropdown-menu nav_widget" role="menu">
-								<li>
-									<a href="http://www.udayton.edu/libraries/">
-									<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-									Roesch Library
-									</a>
-								</li>
-								<li>
-									<a href="http://campus.udayton.edu/mary/">
-									<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-									Marian Library
-									</a>
-								</li>
-								<li>
-									<a href="http://www.udayton.edu/education/cmc/">
-									<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-									CMC Library
-									</a>
-								</li>
-								<li>
-									<a href="http://www.udayton.edu/law/library/">
-									<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-									Zimmerman Law Library
-									</a>
-								</li>
-							</ul>
-						</li>
-						
-						<li>
-							<a href="http://www.udayton.edu/libraries/get_research_help/askref.php">
-							<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-							Ask A Librarian 
+							Roesch Library
 							</a>
 						</li>
 						<li>
-							<a href="https://udayton.illiad.oclc.org/illiad/logon.html">
+							<a href="http://campus.udayton.edu/mary/">
 							<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-							InterLibrary Loan
+							Marian Library
 							</a>
 						</li>
 						<li>
-							<a href="http://library2.udayton.edu/newbooks/">
+							<a href="http://www.udayton.edu/education/cmc/">
 							<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-							New Books List
+							CMC Library
 							</a>
 						</li>
 						<li>
-							<a href="http://www.librarything.com/profile.php?view=RoeschLeisure">
+							<a href="http://www.udayton.edu/law/library/" style="
+							border-bottom: 0px;
+							">
 							<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-							Leisure Reading
-							</a>
-						</li>
-						<li>
-							<a href="http://www.ohiolink.edu/">
-							<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-							OhioLINK
-							</a>
-						</li>
-						<li>
-							<a href="http://libproxy.udayton.edu/login?url=http://newfirstsearch.oclc.org/dbname=WorldCat;done=referer;FSIP">
-							<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-							WorldCat
-							</a>
-						</li>
-						<li>
-							<a href="https://www.udayton.edu/libraries/get_research_help/feedback/report_a_catalog_error.php">
-							<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-							Report a Catalog Error
-							</a>
-						</li>
-						<li>
-							<a href="https://www.udayton.edu/libraries/borrowing_hours_and_services/hours.php">
-							<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-							Hours &amp; Events
+							Zimmerman Law Library
 							</a>
 						</li>
 					</ul>
-				</div>
+				</li>
 				
-				<!--                    -->
-				</div>
-				<!-- /NAVIGATION WIDGET -->
+				<li>
+					<a href="http://www.udayton.edu/libraries/get_research_help/askref.php">
+					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+					Ask A Librarian 
+					</a>
+				</li>
+				<li>
+					<a href="https://udayton.illiad.oclc.org/illiad/logon.html">
+					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+					InterLibrary Loan
+					</a>
+				</li>
+				<li>
+					<a href="http://library2.udayton.edu/newbooks/">
+					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+					New Books List
+					</a>
+				</li>
+				<li>
+					<a href="http://www.librarything.com/profile.php?view=RoeschLeisure">
+					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+					Leisure Reading
+					</a>
+				</li>
+				<li>
+					<a href="http://www.ohiolink.edu/">
+					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+					OhioLINK
+					</a>
+				</li>
+				<li>
+					<a href="http://libproxy.udayton.edu/login?url=http://newfirstsearch.oclc.org/dbname=WorldCat;done=referer;FSIP">
+					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+					WorldCat
+					</a>
+				</li>
+				<li>
+					<a href="https://www.udayton.edu/libraries/get_research_help/feedback/report_a_catalog_error.php">
+					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+					Report a Catalog Error
+					</a>
+				</li>
+				<li>
+					<a href="https://www.udayton.edu/libraries/borrowing_hours_and_services/hours.php" style="
+					border-bottom:0px;
+					">
+					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+					Hours &amp; Events
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<!--                    -->
+		</div>
+		<!-- /NAVIGATION WIDGET -->
 						
 			</div>
 			
