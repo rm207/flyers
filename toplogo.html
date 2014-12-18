@@ -1,53 +1,9 @@
-<!-- toplogo.html start -->
-<!-- DESKTOP_HEADER -->
-<!-- requires css class .desktop_logo -->
-		<!-- DESKTOP_HEADER -->
-		<!-- requires css class .desktop_logo -->
-		<div id="DESKTOP_HEADER">
-		<!--                -->
-		
-		<div class="visible-lg visible-md">
-			<div class="desktop_header" style="
-				border-top: 5px solid #d52728;
-				background-repeat: no-repeat;
-				padding-left: 40px;
-				padding-top: 15px;
-				position: relative;
-			">
-				<a href="http://www.udayton.edu">
-					<div class="desktop_logo" style="
-					">
-					</div>
-				</a>
-			</div>
-			<div class="header_bottom desktop_header_bottom" style="
-				padding-top: 10px;
-				padding-left: 15px;
-				background-color: rgba(0,168,228,.8);
-				text-transform: uppercase;
-				font-family: 'Champion Lightwt A', Helvetica,Arial,sans-serif;
-				letter-spacing: 2px;
-				font-weight: 400;
-				color: #fff;
-				position: relative;
-				text-transform: uppercase;
-				font-size: 44px;
-				line-height: 50px;
-			">
-				<div><a href="/" style="color: inherit;">Libraries Catalog</a></div>
-			</div>
-		</div>
-
-		<!--                 -->
-		</div>
-		<!-- /DESKTOP_HEADER -->
-
-		<!-- MOBILE_HEADER -->
-		<!-- also include custom class .mobile_logo -->
-		<div id="MOBILE_HEADER">
+		<!-- HEADER -->
+		<div id="HEADER">
 		<!--               -->
 		
-		<div class="visible-sm visible-xs">
+		<!-- <div class="visible-sm visible-xs"> -->
+		<div>
 		
 		<div class="mobile_header" style="
 			padding-left: 15px;
@@ -65,32 +21,41 @@
 				</a>
 		</div>
 		
-		<!-- mobile navbar -->		
+		<!-- mobile navbar -->
+		<div class="visible-sm visible-xs">
 		<nav class="navbar navbar-default" role="navigation" style="
-			background-color: rgba(0,168,228,.8);
+			//background-color: rgba(0,168,228,.8);
 			border-radius: 0px;
 			border: 0px;
 			margin-bottom:0px;
+			//border-bottom: 5px solid #d52728;
+			//border-bottom: 5px solid rgba(0,168,228,.8);
+			border-bottom: 5px solid #333;
 		">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
+				<div class="navbar-header" style="
+					background-color: #fff;
+				">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile_navbar">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/" style="
-						font-family: 'Champion Lightwt A', Helvetica,Arial,sans-serif;
-						letter-spacing: 1px;
+					<a class="header_link navbar-brand" href="/" style="
+						//font-family: 'Champion Lightwt A', Helvetica,Arial,sans-serif;
+						font-family: chronic;
+						background-color: #fff;
+						//letter-spacing: 1px;
 						font-weight: 400;
-						color: #fff;
-						font-size: 23px;
+						color: #d52728;
+						//font-size: 23px;
+						font-size:22px;
 						line-height: 27px;
 						position: relative;
-						text-transform: uppercase;
-					">LIBRARIES CATALOG</a>
+						//text-transform: uppercase;
+					">Libraries Catalog</a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -150,66 +115,52 @@
 					 
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
-		</nav>		
+		</nav>
+		</div>
 		<!-- /mobile navbar -->
+		
+		
+		<!-- desktop header -->
+		
+		<div class="visible-lg visible-md header_bottom desktop_header_bottom" style="
+				//font-family: 'Champion Lightwt A', Helvetica,Arial,sans-serif;
+				font-family: chronic;
+				padding-top: 10px;
+				padding-left: 15px;
+				//background-color: rgba(0,168,228,.8);
+				//text-transform: uppercase;
+				//letter-spacing: 2px;
+				font-weight: 400;
+				color: #d52728;
+				position: relative;
+				font-size: 34px;
+				line-height: 50px;
+				//border-bottom: 5px solid #d52728;
+				//border-bottom: 5px solid rgba(0,168,228,.8);
+				border-bottom: 5px solid #333;
+				padding-bottom: 10px;
+			">
+				<a class="header_link" href="/" style="color: inherit;">Libraries Catalog</a>
+			</div>
+		
+		<!-- /desktop header -->
 		
 		</div>
 		
 		<!--               -->
 		</div>
-		<!-- /MOBILE_HEADER-->
-
-<!-- MAIN PAGE BODY -->
-
-<!-- our container for site content and grid system -->
-<div class="container-fluid" style="
-	padding-top: 10px;
-">
-<div class="row">
-
-	<div class="col-md-12" style="
-		padding-top: 10px;
-	">
-	<!-- BODY AREA -->
-	<div id="BODY_AREA">
+		<!-- /HEADER-->
 	
-	<script type="text/javascript">
-function search_form_style() {
-	//modify some of the elements in our top search form to enable responsive function
-	if (document.getElementsByName('searchtool')) {	
-		//remove the border around the searchtool
-		//don't have to do this now
-		//document.getElementsByClassName('browseSearchtool')[0].className = '';
+		<!-- MAIN PAGE BODY -->
 		
-		//change the form class for responsive function
-		var target_form = document.getElementsByName('searchtool')[0];
-		target_form.className = 'form-inline';
-
-		//wrap the inner contents of the form in a div with class form-group
-		var form_html = target_form.innerHTML;
-		target_form.innerHTML = '<div class="form-group">\n' + form_html + '\n</div>';
-
-		//change the input values so that they have the proper class name 
-		document.getElementById('searchtype').className = 'form-control';
-		document.getElementById('searcharg').className = 'form-control';
-		document.getElementById('sortdropdown').className += ' form-control';
+		<!-- our container for site content and grid system -->
+		<div class="container-fluid">
+		<div class="row" style="
+		padding-top:15px;
+		">
 		
-		//wrap the input element for the checkbox in a div and label
-		var checkbox_label = document.getElementsByClassName('availLimMessage')[0];
-		var form_html = document.getElementsByName('availlim')[0].outerHTML;
-		document.getElementsByName('availlim')[0].outerHTML = '<div class="checkbox"><label>\n' +  form_html  + '\n' + checkbox_label.innerHTML + '</label></div>';	
-		//set the original label to not display
-		checkbox_label.style='display:none';
-		
-		//set the submit and sort button to display correctly
-		document.getElementsByName('SUBMIT')[0].className = 'btn btn-default';
-		if (document.getElementById('sortbutton')) {
-			document.getElementById('sortbutton').className = 'btn btn-default';
-		}//end if
-	}//end if
-}
-	</script>
-	
-	
-	<!--           -->
-	<!-- toplogo.html end-->
+			<div class="col-md-9 col-md-push-3">
+			
+			<!-- BODY AREA -->
+			<div id="BODY_AREA">
+			<!--           -->
