@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 <meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> <!-- Bootstrap --> <link href="/screens/bootstrap.min.css" rel="stylesheet"> <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> <script src="/screens/jquery.min.js"></script> <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"><!-- Custom CSS --> <link href="/screens/custom.css" rel="stylesheet"> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]-->
+<title>Roesch Library Catalog - University of Dayton</title>
 	</head>
 	<body>
 	
@@ -192,7 +193,7 @@
 				<!-- <li id="tab-journal"><a href="#journal" data-toggle="tab">Journal</a></li> -->
 				<li id="tab-database"><a href="#database" data-toggle="tab">Database</a></li>				
 				<li id="tab-numbers"><a href="#numbers" data-toggle="tab">Number</a></li>
-				<li id="tab-database"><a href="#reserves" data-toggle="tab">Reserve</a></li>
+				<li id="tab-reserves"><a href="#reserves" data-toggle="tab">Reserve</a></li>
 			</ul>
 		</div>
 
@@ -205,7 +206,7 @@
 				<!-- <li id="pill-journal"><a href="#journal" data-toggle="tab">Journal</a></li> -->
 				<li id="pill-database"><a href="#database" data-toggle="tab">Database</a></li>
 				<li id="pill-numbers"><a href="#numbers" data-toggle="tab">Number</a></li>
-				<li id="pill-numbers"><a href="#reserves" data-toggle="tab">Reserve</a></li>
+				<li id="pill-reserves"><a href="#reserves" data-toggle="tab">Reserve</a></li>
 			</ul>
 		</div>
 		
@@ -684,13 +685,13 @@
 				<span class="help-block">Enter Search Terms For <strong>Subject</strong></span>
 			
 				<div class="form-group">
-					<label for="input_author" class="col-md-1 control-label">Subject: </label>
+					<label for="input_subject" class="col-md-1 control-label">Subject: </label>
 					<div class="col-md-8">
-						<input name="SEARCH" type="text" class="form-control" id="input_author" placeholder="Enter Subject">
+						<input name="SEARCH" type="text" class="form-control" id="input_subject" placeholder="Enter Subject">
 					</div>
 					
 					<div class="col-md-3">
-						<select name="sortdropdown" id="sortdropdown_author" class="form-control">
+						<select name="sortdropdown" id="sortdropdown_subject" class="form-control">
 							<option value="-">System Sorted</option> 
 							<option value="t"> Title</option> 
 							<option value="a"> Author</option> 
@@ -1135,7 +1136,7 @@
 				<span class="help-block">Enter Search Terms For <strong>Professor Name</strong></span>
 			
 				<div class="form-group">
-					<label for="input_input_professor" class="col-md-1 control-label">Professor Name: </label>
+					<label for="input_professor" class="col-md-1 control-label">Professor Name: </label>
 					<div class="col-md-8">
 						<input name="SEARCH" type="text" class="form-control" id="input_professor" placeholder="Enter Professor Name">
 					</div>
@@ -1164,9 +1165,9 @@
 					<div class="col-md-offset-1 col-md-11">
 						Examples:
 						<ul>
-							<li>ENG 101</li>
-							<li>BAR EXAM</li>
-							<li>MUSIC THERAPY</li>
+							<li>Smith</li>
+							<li>Johnson</li>
+							<li>Jones</li>
 						</ul>
 					</div>
 				</div>
@@ -1447,22 +1448,22 @@
 					break;
 					
 				case "/search/a":
-				case "/search/t":
+				case "search/t":
 					$('#desktop_tabs a[href="#author"]').tab('show');
 					$('#mobile_tabs a[href="#author"]').tab('show');
 					console.log("author: ");
-					break;
-
-				case "/search/j":
-					$('#desktop_tabs a[href="#author"]').tab('show');
-					$('#mobile_tabs a[href="#author"]').tab('show');
-					console.log("journal: ");
 					break;
 					
 				case "/search/d":
 					$('#desktop_tabs a[href="#subject"]').tab('show');
 					$('#mobile_tabs a[href="#subject"]').tab('show');
-					console.log("subject: ");	
+					console.log("subject: ");
+
+				case "/search/j":
+					$('#desktop_tabs a[href="#journal"]').tab('show');
+					$('#mobile_tabs a[href="#journal"]').tab('show');
+					console.log("journal: ");
+					break;
 					
 				case "/search/y":
 					$('#desktop_tabs a[href="#database"]').tab('show');
