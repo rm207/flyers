@@ -6,3 +6,7 @@
 *fix javascript for the desktop and mobile view so that the navigation view changes when you switch viewports.
 
 *add all hidden navrow buttons onto the bib_display.html right navigation menu (marc, request, etc)
+
+*add icon for logout
+
+*add icon for patron view (icon but_ret2prec)
