@@ -81,6 +81,7 @@ a.header_link:hover {
 
 .TABLEPARAM_BIB_ITEMS {
 	border: 1px solid #ddd;
+	margin-bottom: 0px;
 }
 
 .bibItemsHeader {
