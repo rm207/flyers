@@ -10,3 +10,5 @@
 *add icon for logout
 
 *add icon for patron view (icon but_ret2prec)
+
+*move table of contents token lower on bib_display.html
