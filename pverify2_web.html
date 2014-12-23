@@ -1,136 +1,121 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- 2006 WebPAC Pro Version, set from 26 March, 2007 -->
-<!-- This file last changed: 27 January, 2007 -->
-<head>
-<title>Roesch Library Catalog</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<link rel="stylesheet" type="text/css" href="/screens/styles.css" title="default" />
-<!--[if lte IE 8]>
-
-<link rel="stylesheet" media="all" type="text/css" href="/screens/ie_styles.css" />
-
-<![endif]-->
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+<meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"> <!-- Bootstrap --> <link href="/screens/bootstrap.min.css" rel="stylesheet"> <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> <script src="/screens/jquery.min.js"></script> <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"><!-- Custom CSS --> <link href="/screens/custom.css" rel="stylesheet"> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]-->
+<title>Roesch Library Catalog - University of Dayton</title>
+	</head>
+	<body>
+	
 <!--{toplogo}-->
-<div>
-<div class="folderWrapper"><!-- "folder" interface wrapper div-->
-	<div class="mainSpacer"><!--wrapper div that contains the selection tabs-->
-		<div class="mainActiveTab"><!--active tab-->
-			<b class="tabTop"><b class="active1"></b><b class="active2"></b><b class="active3"></b><b class="active4"></b></b>
-			<div class="DisplayBoxContent"><div class="menuTabActive">Login</div></div>
-		</div><!--close active tab-->
-	</div><!--close selection tab wrapper-->
-	<div class="mainSpacer"><!-- main content wrapper div -->
-		<div class="mainActiveContent">
-<table class="textFix"><tr><td valign="top">
-<div class="pageMainAreaHeader">Web Access Management Login</div>
-<form method="post" class="unpadded">
+<div class="pageContentInner">
+<h1 class="pageHeader">Login</h1>
+<div class="form1Part" id="accessibleForm">
+<form method="post" target="_top" name="patform">
 <!--{iferrmsg}-->
-<span class="errorMessage">
+<span class="errormessage">
 <!--{iferrmsgisPIN}-->
 <!--{newpinmsg}-->
 <!--{else}-->
 <!--{errmsg}-->
 <!--{xif}-->
-</span><br /><br /><br />
+</span>
 <!--{xif}-->
-<table width="100%" class="textFix">
+
+<fieldset>
+<legend>
+<!--{enterinfo}-->
+</legend>
+
+<!--{ifextpat}-->
+<h2>Students, Staff, and Faculty</h2>
+<div class="formEntryArea">
+<label for="extpatid"><span class="formLabel">
+Username:
+</span></label>
+<!--{extpatid}-->
+<label for="extpatpw"><span class="formLabel">
+Password:
+</span></label>
+<!--{extpatpw}-->
+</div>
+<h2>Visitors</h2>
+<!--{xif}-->
+
 <!--{ifneedpatronname}-->
-<tr><td width="30%"></td><td>
-<!--{nameexample}-->
-</td></tr><tr><td>
+<div class="formEntryArea">
 <!--{nameprompt}-->
-</td><td>
 <!--{name}-->
-</td></tr>
+<span class="formLabelExample">
+<!--{nameexample}-->
+</span>
+</div>
 <!--{xif}-->
+
 <!--{ifneedpatronverify}-->
-<tr><td>&nbsp;</td><td>
-<!--{barcodeexample}-->
-</td></tr>
-<tr><td>
+<div class="formEntryArea">
 <!--{barcodeprompt}-->
-</td><td>
 <!--{barcode}-->
-</td></tr>
+<span class="formLabelExample">
+<!--{barcodeexample}-->
+</span>
+</div>
+
 <!--{ifneedspin}-->
+
 <!--{iferrmsgisPIN}-->
-<tr><td colspan="2">
+<p>
 <!--{newpinmsg}-->
-</td></tr><tr><td>
+</p>
+<div class="formEntryArea">
+<!-- <label for="pin1"> -->
+<span class="formLabel">
 <!--{pin1prompt}-->
-</td><td>
+</span>
 <!--{pin1}-->
-</td></tr><tr><td>
+<!-- </label> -->
+</div>
+<div class="formEntryArea">
+<!-- <label for="pin2"> -->
+<span class="formLabel">
 <!--{pin2prompt}-->
-</td><td>
+</span>
 <!--{pin2}-->
-</td></tr>
+<!-- </label> -->
+</div>
+
 <!--{else}-->
-<tr><td></td><td>
-<!--{pininstructions}-->
-</td></tr><tr><td>
+<div class="formEntryArea">
 <!--{pinprompt}-->
-</td><td>
 <!--{pin}-->
-</td></tr>
+<span class="formLabelExample">
+<!--{pininstructions}-->
+</span>
+</div>
+
 <!--{xif}-->
 <!--{xif}-->
 <!--{xif}-->
-</table>
-<br /><br />
+
+    <!--{ifalternate_id}-->
+    <!--{user_name}-->
+    <!--{xif}-->
+
+<div class="formButtonArea">
+<!--{ifneedspin}-->
+<!--{pinresetrequest}-->
+<!--{xif}-->
 <!--{submit}-->
+</div>
+</fieldset>
 </form>
-<!--{startover}-->
-</td></tr></table>
 
+</div>
 
-		</div>
-<div >
-	<b class="conbottom"><b class="conb4"></b><b class="conb3"></b><b class="conb2"></b><b class="conb1"></b></b>
-</div>
-	</div><!--close main content wrapper div-->
-</div><!--close wrapper of "folder interface"-->
-<div class="mainNavLinksWrapper">
-<div class="roundedContent">
-<!--<b class="xtop"><b class="xb1"></b><b class="xb2"></b><b class="xb3"></b><b class="xb4"></b></b>-->
-<div class="LeftContentInfo">
-<!--<div align="center"><img src="/screens/welcome.jpg" alt="Welcome to Webpac Pro"/></div>-->
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/patroninfo">My Library Login</a></div>
-<!--<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/selfreg">Patron self registration</a></div>-->
-<!--<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/acquire">Suggest a purchase</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/suggest">Comments</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/screens/libinfo.html">Library Info</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/ftlist">Featured item lists</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/screens/feeds_example.html">Feeds</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/">Search</a></div>-->
-<!--<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/screens/resources_index.html">Other Resources</a></div>-->
-<!-- Note: uncomment this row and insert the correct URL if library uses KidsOnline product -->
-<!--<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="#">KidsOnline</a></div>-->
-<!-- Note: if library has Web OPACs in alternate language(s), links can be added here -->
-<!--<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="/screens/help_index.html">Help</a></div>-->
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="http://library2.udayton.edu/chat.php">Ask A Librarian</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="http://udayton.illiad.oclc.org/illiad/logon.html">InterLibrary Loan</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="http://library2.udayton.edu">Roesch Library</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="http://campus.udayton.edu/mary/">Marian Library</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="http://soeap.udayton.edu/support/cmc/">CMC Library</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="http://law.udayton.edu/lawlibrary/">Zimmerman Law Library</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="http://www.ohiolink.edu/">OhioLINK</a></div>
-<div><img src="/screens/bullet.gif" alt=""/>&nbsp;<a href="http://library2.udayton.edu/research/article/dbguides/worldcat.php">WorldCat</a></div>
-</div>
-<!--<b class="xbottom"><b class="xb4"></b><b class="xb3"></b><b class="xb2"></b><b class="xb1"></b></b>-->
-</div>
-</div>
-</div>
-<div style="clear:both"></div>
-<div id ="botpagenav">
-<ul class="botpageLinks">
-<li><a href="/screens/Libraries.html">Libraries</a></li>
-<li class="breaker">|</li>
-<li><a href="/screens/help_index.html">Help</a></li>
-</ul>
 </div>
 <!--{botlogo}-->
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+try { document.forms[0].elements[1].focus(); }
+catch(err) {}
+//--><!]]></script>
 </body>
 </html>
