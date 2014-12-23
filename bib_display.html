@@ -127,6 +127,14 @@ for (var i=0; i<button_id_array.length; i++) {
 		}
 	}
 }
+
+var icon_but_output_elements = document.getElementById('icon_but_output').getElementsByTagName('A');
+
+for (var i=0; i<icon_but_output_elements.length; i++) {
+	icon_but_output_elements[i].style = 'block';
+	icon_but_output_elements[i].getElementsByTagName('DIV')[0].style.width = '100%';
+	icon_but_output_elements[i].getElementsByTagName('DIV')[0].style.display = 'inline-block';
+}
 </script>
 	
 </div>
