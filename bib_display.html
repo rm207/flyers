@@ -52,54 +52,62 @@
 <!--{ifhasresourcetable}-->
 	<!-- /ifhasresourcetable -->
 
-	<div class="table-responsive">
 	<!-- resourcetable -->
 <!--{resourcetable}-->
 	<!-- /resourcetable -->
 <!--{xif}-->
-	</div>
+
 
 	<!-- relsearch -->
 <!--{relsearch}-->
 	<!-- /relsearch -->
 </div>
 
-<div class="briefcit_bookjacket">
-	<!-- bibimage -->
+
+
+<div class="row">
+
+	<div class="col-md-2">
+
+		<div class="briefcit_bookjacket">
+			<!-- bibimage -->
 <!--{bibimage}-->
-	<!-- /bibimage -->
-	
-<div class="bibMedia">
-	<!-- media -->
+			<!-- /bibimage -->
+		</div>
+			
+		<div class="bibMedia">
+			<!-- media -->
 <!--{media}-->
-	<!-- /media --> 
-</div>
-</div>
-
-<div class="bibDisplayContentMain">
-
-	<div class="table-responsive">
-	<!-- recordinfo:tapr -->
+			<!-- /media --> 
+		</div>
 	
-<!--{recordinfo:tapr}-->
-	
-	<!-- /recordinfo:tapr -->
 	</div>
+	<!-- /class="col-md-2" -->
+	
+	
+	<div class="col-md-8">
 
-
-
-	<!-- ifhaspatrate -->
-<!--IFHASPATRATE REMOVED-->
-	<!-- /ifhaspatrate -->
-<div class="bibDisplayRatings">
-	<!-- ratings -->
-<!--RATINGS REMOVED-->
-	<!-- /ratings -->
+		<!-- recordinfo:tapr -->
+		
+<!--{recordinfo:tapr}-->
+		
+		<!-- /recordinfo:tapr -->
+	
+	</div>
+	<!-- /class="col-md-8" -->
+	
+	<div class="col-md-2" id="icon_but_output">
+	
+	</div>
+	<!-- /class="col-md-2" id="icon_but_output"-->
+	
+	
+	
 </div>
-<!--XIF FOR IFHASPATRATE REMOVED-->
+<!-- /class="row" -->
 
 	<!-- booking -->
-<!--{booking}-->
+	<!--TURNED OFF-->
 	<!-- /booking -->
 
 	<!-- holdingslink -->
@@ -151,7 +159,7 @@
 
 <div class="bibDisplayItems">
 <div class="bibDisplayItemsHeader"><strong>Copies</strong></div>
-<div class="table-responsive bibDisplayItemsMain">
+<div class="bibDisplayItemsMain">
 	<!-- items -->
 <!--{items}-->
 	<!-- /items -->
@@ -200,7 +208,7 @@
 
 </div>
 
-</div>
+
 
 
 </div><!-- close bibDisplayContent -->
