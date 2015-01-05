@@ -16,3 +16,5 @@
 *add Roesch2u to bib_display.html
  
 *add "send to phone" function to bib_display.html
+
+*fix request problem (request icon shouldn't display) http://flyers.udayton.edu:2082/record=b1311694~S0
