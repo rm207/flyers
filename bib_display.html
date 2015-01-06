@@ -166,7 +166,7 @@
 	
 	//make sure to turn off the 'ROESCH2U' button if this is an 'E-RESOURCE'
 	try {
-		if (document.getElementById('token_media').getElementsByTagName('IMG').alt == 'E-RESOURCE') {
+		if (document.getElementById('token_media').getElementsByTagName('IMG')[0].alt == 'E-RESOURCE') {
 			document.getElementById(ICON_ROESCH_2_U_clone).display = 'none';
 		}
 	}
