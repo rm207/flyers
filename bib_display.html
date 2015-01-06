@@ -25,10 +25,19 @@
 <!--{innreach}-->
 	<!--{innreach}-->	
 
-	<a><div style="display:none" id="ICON_ROESCH_2_U" class="ROESCH_2_U btn btn-default catnav">
-		<i class="fa fa-truck" style="font-size:150%"></i> Roesch 2U<div>(faculty use only)</div></div>
+	<a href="javascript:open_refworks_win('http://library2.udayton.edu/refworks/processor_a.php?recordnum');">
+		<div style="display:none" id="ICON_REFWORKS" class="REFWORKS btn btn-default catnav">
+			<i class="fa fa-file-text"></i> export to refworks
+		</div>		 
 	</a>
+
 	
+	<a>
+		<div style="display:none" id="ICON_ROESCH_2_U" class="ROESCH_2_U btn btn-default catnav">
+			<i class="fa fa-truck" style="font-size:150%"></i> Roesch 2U<div>(faculty use only)</div>
+		</div>
+	</a>
+		
 	<!-- collect author, title, callnumber, and issn -->
 	<div id="collect_author" style="display:none">
 		<!--{recordinfo:a}-->
@@ -130,6 +139,7 @@
 		['ICON_BUT_REQUEST',], //request
 		['ICON_INNREACH'], //OHIOLINK
 		['ICON_BUT_SHOWSIM',], //more like this
+		['ICON_REFWORKS',], //export to refworks
 		['ICON_BUT_BIBEXPORT',], //add to saved
 		['ICON_BOOKCART_SAVED',], //remove from saved
 		['ICON_MYLISTS_SAVE',], //add to my lists
