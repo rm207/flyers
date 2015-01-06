@@ -124,7 +124,7 @@
 	<div class="col-md-2" id="icon_but_output">
 	</div>
 	<!-- /class="col-md-2" id="icon_but_output"-->
-	
+
 <script>
 	//these are the IDs we are targeting. Adjust the order of these as desired.
 	var button_id_array = [
@@ -149,6 +149,7 @@
 			if (button_id_array[i][1].parentElement.tagName == 'A') {
 				//console.log (button_id_array[i][1]);
 				temp_element = button_id_array[i][1].parentElement.cloneNode(true);
+				temp_element.id += '_clone';
 				document.getElementById('icon_but_output').appendChild(temp_element);
 				delete temp_element;
 			}
@@ -163,8 +164,6 @@
 		icon_but_output_elements[i].getElementsByTagName('DIV')[0].style.width = '100%';
 		icon_but_output_elements[i].getElementsByTagName('DIV')[0].style.display = 'inline-block';
 	}
-	
-	
 	
 </script>
 	
