@@ -30,6 +30,41 @@
 		<i class="fa fa-truck" style="font-size:150%"></i> Roesch 2U<div>(faculty use only)</div></div>
 	</a>
 	
+	<!-- collect author, title, callnumber, and issn -->
+	<div id="collect_author" style="display:none">
+		<!--{recordinfo:a}-->
+<!--{recordinfo:a}-->
+		<!--{recordinfo:a}-->
+	</div>
+	
+	<div id="collect_title" style="display:none">
+		<!--{recordinfo:t}-->
+<!--{recordinfo:t}-->
+		<!--{recordinfo:t}-->
+	</div>
+	
+	<div id="collect_callnumber" style="display:none">
+		<!--{recordinfo:c}-->
+<!--{recordinfo:c}-->
+		<!--{recordinfo:c}-->
+	</div>
+	
+	<div id="collect_issn" style="display:none">
+		<!--{recordinfo:i}-->
+<!--{recordinfo:i}-->
+		<!--{recordinfo:i}-->
+	</div>
+	
+	<script>
+		//start with the base URL for illiad
+		var illiad_url = 'https://udayton.illiad.oclc.org/illiad/illiad.dll?Action=10&Form=20&value=GenericRequestBook-Faculty';
+		//add the following values further down the page after we've have the title, call number, author, and issn
+		//'&LoanAuthor=';
+		//'&LoanTitle=';
+		//'&CallNumber=';
+		//'&ISSN=';
+	</script>
+	
 </div>
 
 <div class="spacer">&nbsp;</div>
@@ -96,55 +131,57 @@
 	<div class="col-md-9">
 
 		<!-- recordinfo:tapr -->
-		
 <!--{recordinfo:tapr}-->
-		
 		<!-- /recordinfo:tapr -->
 	
 	</div>
 	<!-- /class="col-md-9" -->
 	
 	<div class="col-md-2" id="icon_but_output">
-
 	</div>
 	<!-- /class="col-md-2" id="icon_but_output"-->
 	
 <script>
+	//these are the IDs we are targeting. Adjust the order of these as desired.
 	var button_id_array = [
-	['ICON_BUT_REQUEST',], //request
-	['ICON_INNREACH'], //OHIOLINK
-	['ICON_BUT_SHOWSIM',], //more like this
-	['ICON_BUT_BIBEXPORT',], //add to saved
-	['ICON_BOOKCART_SAVED',], //remove from saved
-	['ICON_MYLISTS_SAVE',], //add to my lists
-	['ICON_MYLISTS_SAVE_TO_LIST',], //Add Marked to My Lists
-	['ICON_MYLISTS_RECORD'], //Add to My Lists
-	['ICON_BUT_MARC_DISPLAY',], //marc display
-	['ICON_ROESCH_2_U',], //ROESCH 2 U
-];
+		['ICON_BUT_REQUEST',], //request
+		['ICON_INNREACH'], //OHIOLINK
+		['ICON_BUT_SHOWSIM',], //more like this
+		['ICON_BUT_BIBEXPORT',], //add to saved
+		['ICON_BOOKCART_SAVED',], //remove from saved
+		['ICON_MYLISTS_SAVE',], //add to my lists
+		['ICON_MYLISTS_SAVE_TO_LIST',], //Add Marked to My Lists
+		['ICON_MYLISTS_RECORD'], //Add to My Lists
+		['ICON_BUT_MARC_DISPLAY',], //marc display
+		['ICON_ROESCH_2_U',], //ROESCH 2 U
+	];
 
-//
-for (var i=0; i<button_id_array.length; i++) {
-	button_id_array[i][1] = document.getElementById(button_id_array[i][0]);
-	
-	if (button_id_array[i][1]) {
-		if (button_id_array[i][1].parentElement.tagName == 'A') {
-			console.log (button_id_array[i][1]);
-			temp_element = button_id_array[i][1].parentElement.cloneNode(true);
-			document.getElementById('icon_but_output').appendChild(temp_element);
-			//document.getElementsByTagName('body')[0].appendChild(temp_element);
-			delete temp_element;
+	//loop through the array of IDs and place the element into its cosponsoring array position [i][1]
+	for (var i=0; i<button_id_array.length; i++) {
+		button_id_array[i][1] = document.getElementById(button_id_array[i][0]);
+		
+		//if we found that id, AND it is wrapped in an anchor tag, clone it and append it to the 'icon_but_output' area
+		if (button_id_array[i][1]) {
+			if (button_id_array[i][1].parentElement.tagName == 'A') {
+				//console.log (button_id_array[i][1]);
+				temp_element = button_id_array[i][1].parentElement.cloneNode(true);
+				document.getElementById('icon_but_output').appendChild(temp_element);
+				delete temp_element;
+			}
 		}
 	}
-}
 
-var icon_but_output_elements = document.getElementById('icon_but_output').getElementsByTagName('A');
+	//loop back through the list of elements in the 'icon_but_output' area and adjust the style elements to display.
+	var icon_but_output_elements = document.getElementById('icon_but_output').getElementsByTagName('A');
 
-for (var i=0; i<icon_but_output_elements.length; i++) {
-	icon_but_output_elements[i].style = 'block';
-	icon_but_output_elements[i].getElementsByTagName('DIV')[0].style.width = '100%';
-	icon_but_output_elements[i].getElementsByTagName('DIV')[0].style.display = 'inline-block';
-}
+	for (var i=0; i<icon_but_output_elements.length; i++) {
+		icon_but_output_elements[i].style = 'block';
+		icon_but_output_elements[i].getElementsByTagName('DIV')[0].style.width = '100%';
+		icon_but_output_elements[i].getElementsByTagName('DIV')[0].style.display = 'inline-block';
+	}
+	
+	
+	
 </script>
 	
 </div>
