@@ -164,6 +164,14 @@
 		icon_but_output_elements[i].getElementsByTagName('DIV')[0].style.display = 'inline-block';
 	}
 	
+	//make sure to turn off the 'ROESCH2U' button if this is an 'E-RESOURCE'
+	try {
+		if (document.getElementById('token_media').getElementsByTagName('IMG').alt == 'E-RESOURCE') {
+			document.getElementById(ICON_ROESCH_2_U_clone).display = 'none';
+		}
+	}
+	catch (e) {}
+	
 </script>
 	
 </div>
