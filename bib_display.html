@@ -278,6 +278,52 @@
 </div><!-- close bibDisplayContent -->
 <div class="clear"></div>
 </div><!-- close bibDisplayBody -->
+
+
+	<script>
+		//start with the base URL for illiad
+		var illiad_url = 'https://udayton.illiad.oclc.org/illiad/illiad.dll?Action=10&Form=20&value=GenericRequestBook-Faculty';
+		//add the following values further down the page after we've have the title, call number, author, and issn
+		//'&LoanAuthor=';
+		//'&LoanTitle=';
+		//'&ISSN=';
+		//'&CallNumber=';
+					
+		var roesch2u_author = '';
+		var roesch2u_title = '';
+		var roesch2u_issn = '';
+		var roesch2u_call = '';
+
+		try {
+			var roesch2u_author = $(document.getElementById('collect_author').getElementsByClassName('bibInfoData')[0]).text();
+		}
+		catch (e) {}
+
+		try {
+			var roesch2u_title = $(document.getElementById('collect_title').getElementsByClassName('bibInfoData')[0].innerHTML).text();
+		}
+		catch (e) {}
+
+		try {
+			var roesch2u_issn = $(document.getElementById('collect_issn').getElementsByClassName('bibInfoData')[0]).text();
+		}
+		catch (e) {}
+
+		try {
+			var roesch2u_call = $(document.getElementsByClassName('bibDisplayItems')[0].getElementsByClassName('bibItemsEntry')[0].getElementsByTagName('td')[1]).text().split('-')[0];
+		}
+		catch (e) {}
+		
+		illiad_url += '&LoanAuthor=';
+		illiad_url += encodeURI(roesch2u_author);
+		illiad_url += '&LoanTitle=';
+		illiad_url += encodeURI(roesch2u_title);
+		illiad_url += '&ISSN=';
+		illiad_url += encodeURI(roesch2u_issn);		
+		illiad_url += '&CallNumber=';
+		illiad_url += encodeURI(roesch2u_call);
+	</script>
+
 	<!--{botlogo}-->
 <!--{botlogo}-->
 	<!--{botlogo}-->
