@@ -1,4 +1,3 @@
-	<!-- toplogo -->
 <!--{toplogo}-->
 	<!-- /toplogo -->
 	
@@ -149,7 +148,7 @@
 			if (button_id_array[i][1].parentElement.tagName == 'A') {
 				//console.log (button_id_array[i][1]);
 				temp_element = button_id_array[i][1].parentElement.cloneNode(true);
-				temp_element.id += '_clone';
+				temp_element.id = temp_element.getElementsByTagName('DIV').id + '_clone';
 				document.getElementById('icon_but_output').appendChild(temp_element);
 				delete temp_element;
 			}
