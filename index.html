@@ -1456,6 +1456,7 @@
 					
 				case "/search/a":
 				case "/search/t":
+				case "/search/j":
 					$('#desktop_tabs a[href="#author"]').tab('show');
 					$('#mobile_tabs a[href="#author"]').tab('show');
 					console.log("author: ");
@@ -1466,13 +1467,6 @@
 					$('#desktop_tabs a[href="#subject"]').tab('show');
 					$('#mobile_tabs a[href="#subject"]').tab('show');
 					console.log("subject: ");
-					console.log(location.pathname);
-					break;
-
-				case "/search/j":
-					$('#desktop_tabs a[href="#tilte"]').tab('show');
-					$('#mobile_tabs a[href="#title"]').tab('show');
-					console.log("journal: ");
 					console.log(location.pathname);
 					break;
 					
