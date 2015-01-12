@@ -1,22 +1,21 @@
+*add "send to phone" function to bib_display.html
+
 *change font?
 'Alright Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
 
 *move jquery.min.js to the server so that the navigation works when not logged into clean access
 
-*fix javascript for the desktop and mobile view so that the navigation view changes when you switch viewports.
-
-*add all hidden navrow buttons onto the bib_display.html right navigation menu (marc, request, etc)
-
-*add icon for logout
+*create buttons for "logout" and "return to your record" links
 
 *add icon for patron view (icon but_ret2prec)
 
-*move table of contents token lower on bib_display.html
-
-*add Roesch2u to bib_display.html
+*possibly add <!--{pager}--> token to the bottom of bib_display.html just before botlogo.html
  
-*add "send to phone" function to bib_display.html
-
 *fix request problem (request icon shouldn't display) http://flyers.udayton.edu:2082/record=b1311694~S0
 
 *add refworks 
+
+*fix javascript for the desktop and mobile view so that the navigation view changes when you switch viewports.
+	(on mainmenu.html selected pages do not continue to stay selected when toggling viewports)
+
+*remove one of the "submit" buttons on the patron log-in page
