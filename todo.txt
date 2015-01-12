@@ -19,4 +19,4 @@
 
 *fix request problem (request icon shouldn't display) http://flyers.udayton.edu:2082/record=b1311694~S0
 
-*add refworks and "search ohiolink" to right side icon_but_dump navcolumn
+*add refworks 
