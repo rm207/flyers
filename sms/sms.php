@@ -1,9 +1,14 @@
 <?php
 
 //make sure the bib number is a number
-if ( ! (is_numeric ($_POST["b"])) ) {
+if ( ! (is_numeric ($_GET["bib"])) ) {
 	exit(1);
 }
+
+$bib = (int) $_POST["bib"];
+$country = htmlspecialchars($_POST["country"]);
+$phonenumber = preg_replace('/[^0-9]/', '', $_POST['phonenumber']);
+$carrier = str_replace( '{number}', $phonenumber,  htmlspecialchars($_POST["carrier"]) );
 
 ?>
 <!DOCTYPE html>
@@ -13,10 +18,10 @@ if ( ! (is_numeric ($_POST["b"])) ) {
 </head>
 
 <body>
-<pre>
+
 <?php
 
-function doQuery() {
+function doQuery($bib) {
 
 	/* include file (bibliographic.php) supplies the following arguments as the example below illustrates :
 		$username = "username";
@@ -29,12 +34,6 @@ function doQuery() {
 			. "sslmode=require;"
 			. "charset=utf8;"
 	*/
-	
-	
-	$b = (int) $_POST["b"];
-	$country = htmlspecialchars($_POST["country"]);
-	$phonenumber = preg_replace('/[^0-9]/', '', $_POST['phonenumber']);
-	$carrier = str_replace( '{number}', $phonenumber,  htmlspecialchars($_POST["carrier"]) );
 
 	//reset all variables needed for our connection
 	$username = null;
@@ -74,7 +73,7 @@ function doQuery() {
 	left outer JOIN
 	sierra_view.item_record_property		i
 			ON (l.item_record_id = i.item_record_id)
-	where r.record_num = ' . $b . ' AND r.record_type_code = \'b\'
+	where r.record_num = ' . $bib . ' AND r.record_type_code = \'b\'
 	';
 
 	$call_number_norm = '';
@@ -90,26 +89,23 @@ function doQuery() {
 	//close our connection
 	$connection = null;
 	
-	$to = $carrier;
-	$subject = $call_number_norm;
-	$body = 'http://flyers.udayton.edu/record=b' . $b;
-	$from = '';
-
-	
 	echo "country     \t: " . $country . "\n";
 	echo "carrier     \t: " . $carrier . "\n";
 	echo "phonenumber \t: " . $phonenumber . "\n";
-	echo "bib         \t: " . $b . "\n";
-	echo "callnumber  \t: " . $call_number_norm . "\n";
-	echo "link  	  \t: <a href=\"" . $body . "\">" . $body . "</a>\n";
-	//echo "HTTP_REFERER\t: " . $_SERVER['HTTP_REFERER'] . "\n";
+	echo "bib         \t: " . $bib . "\n";
+	echo "HTTP_REFERER\t: " . $_SERVER['HTTP_REFERER'] . "\n";
+
+	$to = $carrier;
+	$subject = $call_number_norm;
+	$body = 'http://flyers.udayton.edu/record=b' . $bib;
+	$from = '';
 
 	$result = mail($to, $subject, $body, $from);
-	
+		
 } // /doquery($bib)
 
-	doQuery();
+	doQuery($bib);
 ?>
-</pre>
+
 </body>
 </html>

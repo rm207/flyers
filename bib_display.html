@@ -41,6 +41,12 @@
 			<i class="fa fa-truck" style="font-size:150%"></i> Roesch 2U<div>(faculty use only)</div>
 		</div>
 	</a>
+	
+	<a>
+		<div style="display:none" id="SMS2ME" class="sms2me btn btn-default catnav">
+			<i class="fa fa-truck" style="font-size:150%"></i> Text this to me
+		</div>
+	</a>
 		
 	<!-- collect author, title, callnumber, and issn -->
 	<div id="collect_author" style="display:none">
@@ -150,6 +156,7 @@
 		['ICON_MYLISTS_SAVE_TO_LIST',], //Add Marked to My Lists
 		['ICON_MYLISTS_RECORD'], //Add to My Lists
 		['ICON_BUT_MARC_DISPLAY',], //marc display
+		['SMS2ME',], //text this to me
 		['ICON_ROESCH_2_U',], //ROESCH 2 U
 	];
 
@@ -313,9 +320,13 @@
 		//var illiad_url = 'https://udayton.illiad.oclc.org/illiad/illiad.dll?Action=10&Form=20&value=GenericRequestBook-Faculty';
 		
 		var illiad_url = 'http://library2.udayton.edu/bibliographic/illiad.php?b=' + bib_num;
+		var text_url = 'http://library2.udayton.edu/bibliographic/sms-send.php?b=' + bib_num;
 		
 		document.getElementById('ICON_ROESCH_2_U_clone').href = illiad_url;
 		document.getElementById('ICON_ROESCH_2_U_clone').target = '_blank';
+		
+		document.getElementById('SMS2ME_clone').href = text_url;
+		document.getElementById('SMS2ME_clone').target = '_blank';
 				
 	</script>
 

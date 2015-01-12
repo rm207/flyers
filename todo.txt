@@ -3,6 +3,8 @@
 *change font?
 'Alright Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
 
+*modify srch_mod.html to include 
+
 *move jquery.min.js to the server so that the navigation works when not logged into clean access
 
 *create buttons for "logout" and "return to your record" links
