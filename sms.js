@@ -1,150 +1,422 @@
-//Javascript Document
-//set this to be the URL for the SMS script
-var smsurl = "http://library2.udayton.edu/hours_test/sms.php?";
+//this javascript expects there to be a form on the page that looks like the following: 
+/*
+<div id="smsform">
+	<form method="POST" action="http://library2.udayton.edu/sms.php">
 
-   function showsms() {
+		<!-- country ids go here -->
+		<select name="country" id="smsform_country" onchange="sms_fill_carrier();">
+			<!-- adding values here via javascript -->
+		</select><script>sms_fill_countries();</script>
+		<!-- carrier names go here -->
+		<select name="carrier" id="smsform_carrier">
+			<!-- adding values here via javascript -->
+		</select><script>sms_fill_carrier();</script>
+		
+		<input type="text" name="phonenumber" id="smsform_phonenumber">
+		
+		<input type="submit">
+	</form>
 
-	/*   This function shows the SMS layer and creates the form   */
+</div>
+*/
 
-try {
+function sms_fill_countries () {
+	if (smsform) {
+		//console.log ('filling countries');
+		for (var key in smsObject.countries) {
+			if (smsObject.countries.hasOwnProperty(key)) {
+				//console.log(key + " -> " + smsObject.countries[key]);
+				temp = document.createElement('option');
+				temp.value = key;
+				temp.innerHTML = smsObject.countries[key];
+				smsform_country.appendChild(temp);
+			}// /if
+		}// /for
+	}// /if
+}// /function
 
-  var title = '';										// we'll save the title here
-  var debug = 0;										// enable this to show alerts
-  var f = document.getElementById('bib_detail');
- 
-  try {													// we use try/catch blocks to hide errors 
-    var tr = document.getElementsByTagName('TR');		// we have to iterate through every TR b/c we can't get to the title otherwise
-    for(i = 0; i < tr.length; i++) {					// for every TR in the document
-      var x=tr[i].getElementsByTagName('TD');			// get all of the Columns
-      if (x.length == 2 && x[0].innerHTML == "TITLE") {  // if the row has 2 columns and the first one has the text of Title
-        title = x[1].innerHTML.replace(/(<([^>]+)>)/ig,""); // strip out all of the HTML so we just have text
-	    if (debug > 0) alert('found title: ' + title);		// just a debug notice
-      }
-    }
- } catch (e) {}
- 
- var sms = document.getElementById('sms');				// this is the DIV that we're going to put the text into
- // we'll load the 'out' variable with all the html and then put it into the sms div
- var out = "<h3>Send the title and location of an item to your Mobile Phone</h3><form name='sms_form' method=post><p><b>Title</b>: "+ title +"</p>";
+function sms_fill_carrier() {
+	if (smsform) {
+		console.log ('filling carrier');		
+		//remove child elements from the carrier 
+		while (smsform_carrier.firstChild) {
+			smsform_carrier.removeChild(smsform_carrier.firstChild);
+		}
+		var selected_country = smsform_country.options[smsform_country.selectedIndex].value;
+		//console.log (selected_country);
+		//console.log ( Object.keys(smsObject.sms_carriers[selected_country]).length );
+		for (var key in smsObject.sms_carriers[selected_country]) {
+			if (smsObject.sms_carriers[selected_country].hasOwnProperty(key)) {
+				//console.log(smsObject.sms_carriers[selected_country][key][0] + " -> " + smsObject.sms_carriers[selected_country][key][1]);
+				temp = document.createElement('option');
+				temp.value = temp.innerHTML = smsObject.sms_carriers[selected_country][key][1];
+				temp.innerHTML = smsObject.sms_carriers[selected_country][key][0];
+				smsform_carrier.appendChild(temp);
+			}// /if
+		}// /for
+		
+	}// /if
+}// /function
 
-	out += '<input type=hidden name=title value=\"'+title+'\">';	//dump the title into a hidden form variable
-	out += '<p><b>Enter your mobile phone #</b>: <input name=phone type=text></p>';	// input for the phone #
-	out += "<p class=eg>(use the full 10 digits of your phone #, no spaces, no dashes eg. 6105265000)</p>";
-	out += "<p><b>select your provider:</b><select name=provider>";	// pull-down for each of phone carriers the values will be parsed by the php script
-	out += "<option value=cincinnatib>Cincinnati Bell</option>";
-	out += "<option value=cingular>Cingular/AT&amp;T</option>";
-	out += "<option value=cricket>Cricket</option>";
-	out += "<option value=nextel>Nextel</option>";
-	out += "<option value=qwest>Qwest</option>";
-	out += "<option value=sprint>Sprint</option>";
-	out += "<option value=tmobile>T-Mobile</option>";
-	out += "<option value=verizon>Verizon</option>";
-	out += "<option value=virgin>Virgin</option>";
-	out += "</select></p>";
-	out += "<p><b>Choose the item you need:</b><ol>";
- 
- var itms = document.getElementById('bib_items');		// get the ITEM table
- var tr = itms.getElementsByTagName('TR');				// get each row
-  for(i = 1; i < tr.length; i++) {
-    var x=tr[i].getElementsByTagName('TD');			// get each cell
-    if (x.length == 3) {								// if there's only 3 cells (like our ITEM table)
-      var loc = x[0].innerHTML.replace(/(<([^>]+)>|&nbsp;)/ig,"");		// get the location (remove tags)
-      var callLinks = x[1].getElementsByTagName("a"); //get the call number without extras
-      var call = callLinks[0].innerHTML.replace(/(<([^>]+)>|&nbsp;)/ig,"");
-      //var call = x[1].innerHTML.replace(/(<([^>]+)>|&nbsp;)/ig,"");	// get the call (remove tags)
-      var status = x[2].innerHTML.replace(/(<([^>]+)>|&nbsp;)/ig,"");	// get the status (remove tags)
-	
-	  var chck = '';
-	  if (i == 1) chck = ' checked ';									// if we're on the first row, check it
-	  	// append the input
-		out += '<li><input '+chck+' type=radio name=loc value=\"'+loc+'|'+call+'\">'+ loc + ": "+call+" ("+status+")</li>";
-		// debug statement
-	  if (debug > 0) alert('found item: ' + loc + '|' + call + ' | ' + status );
+var smsObject = {
+	"info" : "JSON array containing e-mail to SMS and MMS mappings constructed from the best available sources and DNS validations.  (C) 2013 CubicleSoft.  All Rights Reserved.",
+	"license" : "MIT or LGPL.  See http://github.com/cubiclesoft/email_sms_mms_gateways for details.",
+	"lastupdated" : "2013-02-08",
+	"countries" : {
+		"us" : "United States",
+		"ca" : "Canada",
+		"ar" : "Argentina",
+		"aw" : "Aruba",
+		"au" : "Australia",
+		"be" : "Belgium",
+		"br" : "Brazil",
+		"bg" : "Bulgaria",
+		"cn" : "China",
+		"co" : "Columbia",
+		"cz" : "Czech Republic",
+		"dm" : "Dominica",
+		"eg" : "Egypt",
+		"fo" : "Faroe Islands",
+		"fr" : "France",
+		"de" : "Germany",
+		"gy" : "Guyana",
+		"hk" : "Hong Kong",
+		"is" : "Iceland",
+		"in" : "India",
+		"ie" : "Ireland",
+		"il" : "Israel",
+		"it" : "Italy",
+		"jp" : "Japan",
+		"mu" : "Mauritius",
+		"mx" : "Mexico",
+		"np" : "Nepal",
+		"nl" : "Netherlands",
+		"nz" : "New Zealand",
+		"pa" : "Panama",
+		"pl" : "Poland",
+		"pr" : "Puerto Rico",
+		"ru" : "Russia",
+		"sg" : "Singapore",
+		"za" : "South Africa",
+		"kr" : "South Korea",
+		"es" : "Spain",
+		"lk" : "Sri Lanka",
+		"se" : "Sweden",
+		"ch" : "Switzerland",
+		"ua" : "Ukraine",
+		"uk" : "United Kingdom",
+		"uy" : "Uruguay",
+		"europe" : "Europe",
+		"latin_america" : "Latin America",
+		"int" : "International"
+	},
+	"sms_carriers" : {
+		"us" : {
+			"airfire_mobile" : ["Airfire Mobile", "{number}@sms.airfiremobile.com"],
+			"alltel" : ["Alltel", "{number}@message.alltel.com"],
+			"alltel_allied" : ["Alltel (Allied Wireless)", "{number}@sms.alltelwireless.com"],
+			"alaska_communications" : ["Alaska Communications", "{number}@msg.acsalaska.com"],
+			"ameritech" : ["Ameritech", "{number}@paging.acswireless.com"],
+			"assurance_wireless" : ["Assurance Wireless", "{number}@vmobl.com"],
+			"at_and_t" : ["AT&T Wireless", "{number}@txt.att.net"],
+			"at_and_t_mobility" : ["AT&T Mobility (Cingular)", "{number}@txt.att.net", "{number}@cingularme.com", "{number}@mobile.mycingular.com"],
+			"at_and_t_paging" : ["AT&T Enterprise Paging", "{number}@page.att.net"],
+			"at_and_t_global_sms" : ["AT&T Global Smart Messaging Suite", "{number}@sms.smartmessagingsuite.com"],
+			"bellsouth" : ["BellSouth", "{number}@bellsouth.cl"],
+			"bluegrass" : ["Bluegrass Cellular", "{number}@sms.bluecell.com"],
+			"bluesky" : ["Bluesky Communications", "{number}@psms.bluesky.as"],
+			"blueskyfrog" : ["BlueSkyFrog", "{number}@blueskyfrog.com"],
+			"boostmobile" : ["Boost Mobile", "{number}@sms.myboostmobile.com", "{number}@myboostmobile.com"],
+			"cellcom" : ["Cellcom", "{number}@cellcom.quiktxt.com"],
+			"cellularsouth" : ["Cellular South", "{number}@csouth1.com"],
+			"centennial_wireless" : ["Centennial Wireless", "{number}@cwemail.com"],
+			"chariton_valley" : ["Chariton Valley Wireless", "{number}@sms.cvalley.net"],
+			"chat_mobility" : ["Chat Mobility", "{number}@mail.msgsender.com"],
+			"cincinnati_bell" : ["Cincinnati Bell", "{number}@gocbw.com"],
+			"cingular" : ["Cingular (Postpaid)", "{number}@cingular.com", "{number}@mobile.mycingular.com"],
+			"cleartalk" : ["Cleartalk Wireless", "{number}@sms.cleartalk.us"],
+			"comcast_pcs" : ["Comcast PCS", "{number}@comcastpcs.textmsg.com"],
+			"cricket" : ["Cricket", "{number}@sms.mycricket.com"],
+			"cspire" : ["C Spire Wireless", "{number}@cspire1.com"],
+			"dtc_wireless" : ["DTC Wireless", "{number}@sms.advantagecell.net"],
+			"element" : ["Element Mobile", "{number}@sms.elementmobile.net"],
+			"esendex" : ["Esendex", "{number}@echoemail.net"],
+			"general_comm" : ["General Communications Inc.", "{number}@mobile.gci.net"],
+			"golden_state" : ["Golden State Cellular", "{number}@gscsms.com"],
+			"google_voice" : ["Google Voice", "{number}@txt.voice.google.com"],
+			"greatcall" : ["GreatCall", "{number}@vtext.com"],
+			"helio" : ["Helio", "{number}@myhelio.com"],
+			"iwireless_tmobile" : ["i wireless (T-Mobile)", "{number}.iws@iwspcs.net"],
+			"iwireless_sprint" : ["i wireless (Sprint PCS)", "{number}@iwirelesshometext.com"],
+			"kajeet" : ["Kajeet", "{number}@mobile.kajeet.net"],
+			"longlines" : ["LongLines", "{number}@text.longlines.com"],
+			"metro_pcs" : ["Metro PCS", "{number}@mymetropcs.com"],
+			"nextech" : ["Nextech", "{number}@sms.nextechwireless.com"],
+			"nextel" : ["Nextel Direct Connect (Sprint)", "{number}@messaging.nextel.com", "{number}@page.nextel.com"],
+			"pageplus" : ["Page Plus Cellular", "{number}@vtext.com"],
+			"pioneer" : ["Pioneer Cellular", "{number}@zsend.com"],
+			"psc_wireless" : ["PSC Wireless", "{number}@sms.pscel.com"],
+			"rogers_wireless" : ["Rogers Wireless", "{number}@sms.rogers.com"],
+			"qwest" : ["Qwest", "{number}@qwestmp.com"],
+			"simple_mobile" : ["Simple Mobile", "{number}@smtext.com"],
+			"solavei" : ["Solavei", "{number}@tmomail.net"],
+			"south_central" : ["South Central Communications", "{number}@rinasms.com"],
+			"southernlink" : ["Southern Link", "{number}@page.southernlinc.com"],
+			"sprint" : ["Sprint PCS (CDMA)", "{number}@messaging.sprintpcs.com"],
+			"straight_talk" : ["Straight Talk", "{number}@vtext.com"],
+			"syringa" : ["Syringa Wireless", "{number}@rinasms.com"],
+			"t_mobile" : ["T-Mobile", "{number}@tmomail.net"],
+			"teleflip" : ["Teleflip", "{number}@teleflip.com"],
+			"ting" : ["Ting", "{number}@message.ting.com"],
+			"tracfone" : ["Tracfone", "{number}@mmst5.tracfone.com"],
+			"telus_mobility" : ["Telus Mobility", "{number}@msg.telus.com"],
+			"unicel" : ["Unicel", "{number}@utext.com"],
+			"us_cellular" : ["US Cellular", "{number}@email.uscc.net"],
+			"usa_mobility" : ["USA Mobility", "{number}@usamobility.net"],
+			"verizon_wireless" : ["Verizon Wireless", "{number}@vtext.com"],
+			"viaero" : ["Viaero", "{number}@viaerosms.com"],
+			"virgin_mobile" : ["Virgin Mobile", "{number}@vmobl.com"],
+			"voyager_mobile" : ["Voyager Mobile", "{number}@text.voyagermobile.com"],
+			"west_central" : ["West Central Wireless", "{number}@sms.wcc.net"],
+			"xit_comm" : ["XIT Communications", "{number}@sms.xit.net"]
+		},
+		"ca" : {
+			"aliant" : ["Aliant", "{number}@chat.wirefree.ca"],
+			"bellmobility" : ["Bell Mobility & Solo Mobile", "{number}@txt.bell.ca", "{number}@txt.bellmobility.ca"],
+			"fido" : ["Fido", "{number}@sms.fido.ca"],
+			"koodo" : ["Koodo Mobile", "{number}@msg.telus.com"],
+			"lynx_mobility" : ["Lynx Mobility", "{number}@sms.lynxmobility.com"],
+			"manitoba_telecom" : ["Manitoba Telecom/MTS Mobility", "{number}@text.mtsmobility.com"],
+			"northerntel" : ["NorthernTel", "{number}@txt.northerntelmobility.com"],
+			"pc_telecom" : ["PC Telecom", "{number}@mobiletxt.ca"],
+			"rogers_wireless" : ["Rogers Wireless", "{number}@sms.rogers.com"],
+			"sasktel" : ["SaskTel", "{number}@sms.sasktel.com", "{number}@pcs.sasktelmobility.com"],
+			"telebec" : ["Telebec", "{number}@txt.telebecmobilite.com"],
+			"telus" : ["Telus Mobility", "{number}@msg.telus.com"],
+			"virgin" : ["Virgin Mobile", "{number}@vmobile.ca"],
+			"wind_mobile" : ["Wind Mobile", "{number}@txt.windmobile.ca"]
+		},
+		"ar" : {
+			"claro" : ["CTI Movil (Claro)", "{number}@sms.ctimovil.com.ar"],
+			"movistar" : ["Movistar", "{number}@sms.movistar.net.ar"],
+			"nextel" : ["Nextel", "TwoWay.{number}@nextel.net.ar"],
+			"telecom_personal" : ["Telecom (Personal)", "{number}@alertas.personal.com.ar"]
+		},
+		"aw" : {
+			"setar" : ["Setar Mobile", "{number}@mas.aw"]
+		},
+		"au" : {
+			"t_mobile" : ["T-Mobile (Optus Zoo)", "{number}@optusmobile.com.au"]
+		},
+		"be" : {
+			"mobistar" : ["Mobistar", "{number}@mobistar.be"]
+		},
+		"br" : {
+			"claro" : ["Claro", "{number}@clarotorpedo.com.br"],
+			"viva_sa" : ["Vivo", "{number}@torpedoemail.com.br"]
+		},
+		"bg" : {
+			"globul" : ["Globul", "{number}@sms.globul.bg"],
+			"mobiltel" : ["Mobiltel", "{number}@sms.mtel.net"]
+		},
+		"cn" : {
+			"china_mobile" : ["China Mobile", "{number}@139.com"]
+		},
+		"co" : {
+			"comcel" : ["Comcel", "{number}@comcel.com.co"],
+			"movistar" : ["Movistar", "{number}@movistar.com.co"]
+		},
+		"cz" : {
+			"vodaphone" : ["Vodaphone", "{number}@vodafonemail.cz"]
+		},
+		"dm" : {
+			"digicel" : ["Digicel", "{number}@digitextdm.com"]
+		},
+		"eg" : {
+			"mobinil" : ["Mobinil", "{number}@mobinil.net"],
+			"vodaphone" : ["Vodaphone", "{number}@vodafone.com.eg"]
+		},
+		"fo" : {
+			"foroya_tele" : ["Foroya tele", "{number}@gsm.fo"]
+		},
+		"fr" : {
+			"sfr" : ["SFR", "{number}@sfr.fr"],
+			"bouygues" : ["Bouygues Telecom", "{number}@mms.bouyguestelecom.fr"]
+		},
+		"de" : {
+			"eplus" : ["E-Plus", "{number}@smsmail.eplus.de"],
+			"o2" : ["O2", "{number}@o2online.de"],
+			"vodaphone" : ["Vodaphone", "{number}@vodafone-sms.de"]
+		},
+		"gy" : {
+			"guyana_telephone" : ["Guyana Telephone & Telegraph", "{number}@sms.cellinkgy.com"]
+		},
+		"hk" : {
+			"csl" : ["CSL", "{number}@mgw.mmsc1.hkcsl.com"]
+		},
+		"is" : {
+			"ogvodafone" : ["OgVodafone", "{number}@sms.is"],
+			"siminn" : ["Siminn", "{number}@box.is"]
+		},
+		"in" : {
+			"aircel" : ["Aircel", "{number}@aircel.co.in"],
+			"aircel_tamil_nadu" : ["Aircel - Tamil Nadu", "{number}@airsms.com"],
+			"airtel" : ["Airtel", "{number}@airtelmail.com"],
+			"airtel_andhra_pradesh" : ["Airtel - Andhra Pradesh", "{number}@airtelap.com"],
+			"airtel_chennai" : ["Airtel - Chennai", "{number}@airtelchennai.com"],
+			"airtel_karnataka" : ["Airtel - Karnataka", "{number}@airtelkk.com"],
+			"airtel_kerala" : ["Airtel - Kerala", "{number}@airtelkerala.com"],
+			"airtel_kolkata" : ["Airtel - Kolkata", "{number}@airtelkol.com"],
+			"airtel_tamil_nadu" : ["Airtel - Tamil Nadu", "{number}@airtelmobile.com"],
+			"celforce" : ["Celforce", "{number}@celforce.com"],
+			"escotel" : ["Escotel Mobile", "{number}@escotelmobile.com"],
+			"idea_cellular" : ["Idea Cellular", "{number}@ideacellular.net"],
+			"loop" : ["Loop (BPL Mobile)", "{number}@loopmobile.co.in"],
+			"orange" : ["Orange", "{number}@orangemail.co.in"]
+		},
+		"ie" : {
+			"meteor" : ["Meteor", "{number}@sms.mymeteor.ie"]
+		},
+		"il" : {
+			"spikko" : ["Spikko", "{number}@spikkosms.com"]
+		},
+		"it" : {
+			"vodaphone" : ["Vodaphone", "{number}@sms.vodafone.it"]
+		},
+		"jp" : {
+			"au" : ["AU by KDDI", "{number}@ezweb.ne.jp"],
+			"ntt" : ["NTT DoCoMo", "{number}@docomo.ne.jp"],
+			"vodaphone_chuugoku" : ["Vodaphone - Chuugoku/Western", "{number}@n.vodafone.ne.jp"],
+			"vodaphone_hokkaido" : ["Vodaphone - Hokkaido", "{number}@d.vodafone.ne.jp"],
+			"vodaphone_hokuriku" : ["Vodaphone - Hokuriku/Central North", "{number}@r.vodafone.ne.jp"],
+			"vodaphone_kansai" : ["Vodaphone - Kansai/West", "{number}@k.vodafone.ne.jp"],
+			"vodaphone_kanto" : ["Vodaphone - Kanto", "{number}@k.vodafone.ne.jp"],
+			"vodaphone_koushin" : ["Vodaphone - Koushin", "{number}@k.vodafone.ne.jp"],
+			"vodaphone_kyuushu" : ["Vodaphone - Kyuushu", "{number}@q.vodafone.ne.jp"],
+			"vodaphone_niigata" : ["Vodaphone - Niigata/North", "{number}@h.vodafone.ne.jp"],
+			"vodaphone_okinawa" : ["Vodaphone - Okinawa", "{number}@q.vodafone.ne.jp"],
+			"vodaphone_osaka" : ["Vodaphone - Osaka", "{number}@k.vodafone.ne.jp"],
+			"vodaphone_shikoku" : ["Vodaphone - Shikoku", "{number}@s.vodafone.ne.jp"],
+			"vodaphone_tokyo" : ["Vodaphone - Tokyo", "{number}@k.vodafone.ne.jp"],
+			"vodaphone_touhoku" : ["Vodaphone - Touhoku", "{number}@h.vodafone.ne.jp"],
+			"vodaphone_toukai" : ["Vodaphone - Toukai", "{number}@h.vodafone.ne.jp"],
+			"willcom" : ["Willcom", "{number}@pdx.ne.jp"]
+		},
+		"mu" : {
+			"emtel" : ["Emtel", "{number}@emtelworld.net"]
+		},
+		"mx" : {
+			"nextel" : ["Nextel", "{number}@msgnextel.com.mx"]
+		},
+		"np" : {
+			"ncell" : ["Ncell", "{number}@sms.ncell.com.np"]
+		},
+		"nl" : {
+			"orange" : ["Orange", "{number}@sms.orange.nl"],
+			"t_mobile" : ["T-Mobile", "{number}@gin.nl"]
+		},
+		"nz" : {
+			"telecom" : ["Telecom", "{number}@etxt.co.nz"],
+			"vodafone" : ["Vodafone", "{number}@mtxt.co.nz"]
+		},
+		"pa" : {
+			"mas_movil" : ["Mas Movil", "{number}@cwmovil.com"]
+		},
+		"pl" : {
+			"orange_polska" : ["Orange Polska", "{number}@sms.orange.pl"],
+			"polkomtel" : ["Polkomtel", "+{number}@text.plusgsm.pl"],
+			"plus" : ["Plus", "+{number}@text.plusgsm.pl"]
+		},
+		"pr" : {
+			"claro" : ["Claro", "{number}@vtexto.com"]
+		},
+		"ru" : {
+			"beeline" : ["Beeline", "{number}@sms.beemail.ru"]
+		},
+		"sg" : {
+			"m1" : ["M1", "{number}@m1.com.sg"]
+		},
+		"za" : {
+			"mtn" : ["MTN", "{number}@sms.co.za"],
+			"vodacom" : ["Vodacom", "{number}@voda.co.za"]
+		},
+		"kr" : {
+			"helio" : ["Helio", "{number}@myhelio.com"]
+		},
+		"es" : {
+			"esendex" : ["Esendex", "{number}@esendex.net"],
+			"movistar" : ["Movistar/Telefonica", "{number}@movistar.net", "{number}@correo.movistar.net", "{number}@movimensaje.com.ar"],
+			"telefonica" : ["Telefonica"],
+			"vodaphone" : ["Vodaphone", "{number}@vodafone.es"]
+		},
+		"lk" : {
+			"mobitel" : ["Mobitel", "{number}@sms.mobitel.lk"]
+		},
+		"se" : {
+			"tele2" : ["Tele2", "{number}@sms.tele2.se"]
+		},
+		"ch" : {
+			"sunrise" : ["Sunrise Communications", "{number}@gsm.sunrise.ch"]
+		},
+		"ua" : {
+			"Beeline" : ["Beeline", "{number}@sms.beeline.ua"]
+		},
+		"uk" : {
+			"aql" : ["aql", "{number}@text.aql.com"],
+			"esendex" : ["Esendex", "{number}@echoemail.net"],
+			"hay_systems" : ["HSL Mobile (Hay Systems Ltd)", "{number}@sms.haysystems.com"],
+			"o2" : ["O2", "{number}@mmail.co.uk"],
+			"orange" : ["Orange", "{number}@orange.net"],
+			"t_mobile" : ["T-Mobile", "{number}@t-mobile.uk.net"],
+			"txtlocal" : ["Txtlocal", "{number}@txtlocal.co.uk"],
+			"unimovil" : ["UniMovil Corporation", "{number}@viawebsms.com"]
+		},
+		"uy" : {
+			"movistar" : ["Movistar", "{number}@sms.movistar.com.uy"]
+		},
+		"europe" : {
+			"tellustalk" : ["TellusTalk", "{number}@esms.nu"]
+		},
+		"latin_america" : {
+			"movistar" : ["Movistar", "{number}@movimensaje.com.ar"]
+		},
+		"int" : {
+			"globalstar" : ["Globalstar satellite", "{number}@msg.globalstarusa.com"],
+			"iridium" : ["Iridium satellite", "{number}@msg.iridium.com"]
+		}
+	},
+	"mms_carriers" : {
+		"us" : {
+			"alltel" : ["Alltel", "{number}@mms.alltel.com"],
+			"alltel_allied" : ["Alltel (Allied Wireless)", "{number}@mms.alltelwireless.com"],
+			"at_and_t" : ["AT&T Wireless", "{number}@mms.att.net"],
+			"bluegrass" : ["Bluegrass Cellular", "{number}@mms.bluecell.com"],
+			"boostmobile" : ["Boost Mobile", "{number}@myboostmobile.com"],
+			"cincinnati_bell" : ["Cincinnati Bell", "{number}@mms.gocbw.com"],
+			"cricket" : ["Cricket", "{number}@mms.mycricket.com"],
+			"nextel" : ["Nextel (Sprint)", "{number}@messaging.nextel.com"],
+			"pageplus" : ["Page Plus Cellular", "{number}@vzwpix.com", "{number}@mypixmessages.com"],
+			"rogers_wireless" : ["Rogers Wireless", "{number}@mms.rogers.com"],
+			"solavei" : ["Solavei", "{number}@tmomail.net"],
+			"sprint" : ["Sprint PCS", "{number}@pm.sprint.com"],
+			"straight_talk" : ["Straight Talk", "{number}@mypixmessages.com"],
+			"t_mobile" : ["T-Mobile", "{number}@tmomail.net"],
+			"telus_mobility" : ["Telus Mobility", "{number}@mms.telusmobility.com"],
+			"tracfone" : ["Tracfone", "{number}@mmst5.tracfone.com"],
+			"us_cellular" : ["US Cellular", "{number}@mms.uscc.net"],
+			"verizon_wireless" : ["Verizon Wireless", "{number}@vzwpix.com", "{number}@mypixmessages.com"],
+			"viaero" : ["Viaero", "{number}@mmsviaero.com"],
+			"virgin_mobile" : ["Virgin Mobile", "{number}@vmpix.com"]
+		},
+		"ca" : {
+			"rogers_wireless" : ["Rogers Wireless", "{number}@mms.rogers.com"],
+			"telus_mobility" : ["Telus Mobility", "{number}@mms.telusmobility.com"]
+		},
+		"fr" : {
+			"bouygues" : ["Bouygues Telecom", "{number}@mms.bouyguestelecom.fr"]
+		},
+		"hk" : {
+			"csl" : ["CSL", "{number}@mgw.mmsc1.hkcsl.com"]
+		}
 	}
- }	
-	// close the list and add note
-   out += "</ol></p>";
-   out += "<p><B>NOTE:</B> <i>carrier charges may apply</i></p>";
-   // add buttons at bottom.  note the return false which stops the forms from actually doing anything
-   out += "<p><a href='#here' id='sendmessage' onClick='sendSMS();return false;'><img src='/screens/smssend.gif' border=0></a> <a href='#here' id='clearmessage' onClick='clearsms();return false;'><img src='/screens/smsclear.gif' border=0></a></p>";
-
-	// we use the innerHTML property to actually set the HTML into the page
-   sms.innerHTML = out+"</form>";
-
-   // now we make the div visible
-   sms.style.visibility = 'visible';
-   sms.style.display = 'block';
-	// some fancy positioning
-   findPos(document.getElementById('smsbutton'),sms,25,-320);
-} catch (e) {
-	// doesn't work?  hide the SMS buttons
-document.getElementById('smsfeatures').style.visibility='hidden';
-}
-return false;
-}
-
-
-   function sendSMS(location) {
-    var frm = document.sms_form;			// get the SMS form
-	var phone = frm.phone.value;			// get the phone #
-	phone = phone.replace(/[^\d]/ig,"");	// remove all non-digit characters
-	if (phone.length == 10) {				// if 10 chars, we're good
-	var url = smsurl;						// start creating the URL
-		//url += "title="+encodeURIComponent(frm.title.value);	// html escpae title
-		url += "&number="+encodeURIComponent(frm.phone.value);	// html escape #
-		url += "&provider="+encodeURIComponent(frm.provider.options[frm.provider.selectedIndex].value);	// html escpae provider
-		for (i=0;i<frm.loc.length;i++) {		// for each item, get the checked one 
-/*		alert(i+" "+frm.loc[i].checked);*/
-			if (frm.loc[i].checked == true) {	// if checked, add it to the URL
-				url += "&item="+encodeURIComponent(frm.loc[i].value);
-			}
-		}
-		if (frm.loc.length == undefined) {		// if just one, should not come to this
-			url += "&item="+encodeURIComponent(frm.loc.value);		
-		}
-
-    var bodyRef = document.getElementsByTagName("body")[0]; //get the bib number out of the <body>, add it to the url
-	var bodyText = bodyRef.innerHTML;
-	var bibNum = bodyText.match(/b[\d]{7}/m);
-	url += "&bib="+bibNum;
-	
-	 var head = document.getElementsByTagName("head")[0];		// now we create a <SCRIPT> tag in the <HEAD> to get the response
-   	 var script = document.createElement('script');
-   	 script.setAttribute('type','text/javascript');
-   	 script.setAttribute('src',url);							// the script is actually the PERL script 
-   	 head.appendChild(script);									// append the script
-	} else {		// invalid phone #, send message
-	  alert('please enter a valid phone #');
-      }
-   }
-	
-	// clear/hide the SMS DIV
-   function clearsms() {
-     var sms = document.getElementById('sms');
-	 sms.style.visibility = 'hidden';
-	 sms.style.display = 'none';
-	 }
-	 
-
-
-// get the position of an item, good for putting the SMS form in a useful place
-function findPos(obj,obj2,lofset,tofset) {
-	var curleft = curtop = 0;
-	if (obj.offsetParent) {
-		curleft = obj.offsetLeft
-		curtop = obj.offsetTop
-		while (obj = obj.offsetParent) {
-			curleft += obj.offsetLeft
-			curtop += obj.offsetTop
-		}
-	}
-	obj2.style.left = curleft+lofset;
-	obj2.style.top = curtop+tofset;
-//	return [curleft,curtop];
-}
-// Grab the bib number of the item
-   function getbib() {
-     var buttonBlock = document.getElementById('navigationRow').innerHTML;
-	 sms.style.visibility = 'hidden';
-	 sms.style.display = 'none';
-	 }
+};

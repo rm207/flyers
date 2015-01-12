@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- font-awesome -->
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- bootstrap -->
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- custom css -->
+<link href="./custom.css" rel="stylesheet">
+
+<!-- sms functions for the page -->
+<script src="./sms.js"></script>
+</head>
+
+<body>
+<pre>
+sms!
+
+<div id="smsform">
+	<form method="POST" action="http://library2.udayton.edu/bibliographic/sms.php">
+
+		<!-- country ids go here -->
+		<select name="country" id="smsform_country" onchange="sms_fill_carrier();">
+			<!-- adding values here via javascript -->
+		</select><script>sms_fill_countries();</script>
+		<!-- carrier names go here -->
+		<select name="carrier" id="smsform_carrier">
+			<!-- adding values here via javascript -->
+		</select><script>sms_fill_carrier();</script>
+		
+		<input name="phonenumber" type="text" id="smsform_phonenumber">
+		
+		<input type="hidden" name="bib" value="3333053">
+		
+		<input type="submit">
+	</form>
+
+</div>
+</pre>
+
+</body>
+</html>
+</html>
+
