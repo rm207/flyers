@@ -9,7 +9,7 @@ if ( ! (is_numeric ($_POST["b"])) ) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>sms this record to me ...</title>
+<title>text this record to me</title>
 </head>
 
 <body>
@@ -29,7 +29,6 @@ function doQuery() {
 			. "sslmode=require;"
 			. "charset=utf8;"
 	*/
-	
 	
 	$b = (int) $_POST["b"];
 	$country = htmlspecialchars($_POST["country"]);
@@ -58,7 +57,6 @@ function doQuery() {
 		exit(1);
 	}
 
-
 	//set output to utf-8
 	$connection->query('SET NAMES UNICODE');
 
@@ -82,7 +80,7 @@ function doQuery() {
 	foreach ($connection->query($sql) as $row) {
 
 		if ($call_number_norm == '') {
-			$call_number_norm = $row['call_number_norm'];
+			$call_number_norm = strtoupper ( $row['call_number_norm'] );
 		}
 
 	}// /foreach
@@ -104,12 +102,20 @@ function doQuery() {
 	echo "link  	  \t: <a href=\"" . $body . "\">" . $body . "</a>\n";
 	//echo "HTTP_REFERER\t: " . $_SERVER['HTTP_REFERER'] . "\n";
 
-	$result = mail($to, $subject, $body, $from);
+	if ( mail($to, $subject, $body, $from) ) {
+		echo "message     \t: <b>sent!</b>\n";
+	}
+	else {
+		echo "message     \t: <b>not sent (error) - please try again</b>\n";
+	}
 	
 } // /doquery($bib)
 
 	doQuery();
 ?>
+
+		 <button type="button" onclick="window.open('', '_self', ''); window.close();">Close Window</button>
+
 </pre>
 </body>
 </html>

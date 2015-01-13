@@ -1,11 +1,9 @@
 <?php
-
 //make sure the bib number is a number
 if ( ! (is_numeric ($_GET["b"])) ) {
 	echo "sorry ... no bib record id sent!";
 	exit(1);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +22,7 @@ if ( ! (is_numeric ($_GET["b"])) ) {
 
 <body>
 <pre>
-sms this to me!
+Text this to me!
 </pre>
 
 <div id="smsform">
