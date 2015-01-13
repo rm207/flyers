@@ -1,11 +1,7 @@
-*add "send to phone" function to bib_display.html
+*add refworks
 
 *change font?
 'Alright Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
-
-*modify srch_mod.html to include 
-
-*move jquery.min.js to the server so that the navigation works when not logged into clean access
 
 *create buttons for "logout" and "return to your record" links
 
@@ -20,4 +16,4 @@
 *fix javascript for the desktop and mobile view so that the navigation view changes when you switch viewports.
 	(on mainmenu.html selected pages do not continue to stay selected when toggling viewports)
 
-*remove one of the "submit" buttons on the patron log-in page
+
