@@ -95,8 +95,8 @@
 							</ul>
 						</li>
 						
-						<li><a href="http://www.udayton.edu/libraries/get_research_help/askref.php">
-							Ask A Librarian</a></li>
+						<li><a href="https://www.udayton.edu/libraries/index.php#2">
+							Get Help</a></li>
 						
 						<li><a href="https://udayton.illiad.oclc.org/illiad/logon.html">
 							InterLibrary Loan</a></li>
@@ -118,8 +118,6 @@
 							
 						<li><a href="https://www.udayton.edu/libraries/borrowing_hours_and_services/hours.php">
 							Hours</a></li>
-						<li><a href="https://www.udayton.edu/libraries/index.php#7">
-							Contact Us</a></li>						
 					</ul>
 					 
 				</div><!-- /.navbar-collapse -->
@@ -167,7 +165,8 @@
 		<div class="row" style="
 		padding-top:15px;
 		">
-		
+			<!-- for toplogo and toplogo_loggedin change this line to the following  -->
+			<!-- <div class="col-md-12"> -->
 			<div class="col-md-9 col-md-push-3">
 				<div id="patron_links">
 				<!-- patron -->
@@ -1498,9 +1497,15 @@
 					break;
 
 				default:
+				/*
 					$('#desktop_tabs a[href="#keyword"]').tab('show');
 					$('#mobile_tabs a[href="#keyword"]').tab('show');
 					console.log("defaulted to keyword: ");
+					console.log(location.pathname);
+				*/
+					$('#desktop_tabs a[href="#advanced"]').tab('show');
+					$('#mobile_tabs a[href="#advanced"]').tab('show');
+					console.log("defaulted to advanced: ");
 					console.log(location.pathname);
 			}
 		});		
@@ -1574,9 +1579,9 @@
 				</li>
 				
 				<li>
-					<a href="http://www.udayton.edu/libraries/get_research_help/askref.php">
+					<a href="https://www.udayton.edu/libraries/index.php#2">
 					<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-					Ask A Librarian 
+					Get Help 
 					</a>
 				</li>
 				<li>
