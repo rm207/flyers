@@ -383,7 +383,7 @@
 			$(document).ready(function() {
 				//change advanced search tab to direct link 
 				//	:do this only if we're NOT on the advanced search page
-				if ( (location.pathname != '/search/X') && (location.pathname != '/search/') ) {
+				if ( (location.pathname != '/search/X') || (location.pathname != '/search/') ) {
 					document.getElementById('tab-advanced').getElementsByTagName('a')[0].removeAttribute('data-toggle');
 					document.getElementById('pill-advanced').getElementsByTagName('a')[0].removeAttribute('data-toggle');
 					document.getElementById('tab-advanced').getElementsByTagName('a')[0].href='/search/X';
@@ -1299,6 +1299,7 @@
 					break;
 
 				case "/search/X":
+				case "/search/":
 					$('#desktop_tabs a[href="#advanced"]').tab('show');
 					$('#mobile_tabs a[href="#advanced"]').tab('show');
 					console.log("advanced: ");
