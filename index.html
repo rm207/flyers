@@ -1448,6 +1448,7 @@
 					break;
 
 				case "/search/X":
+				case "/search/" :
 					$('#desktop_tabs a[href="#advanced"]').tab('show');
 					$('#mobile_tabs a[href="#advanced"]').tab('show');
 					console.log("advanced: ");
@@ -1497,15 +1498,9 @@
 					break;
 
 				default:
-				/*
 					$('#desktop_tabs a[href="#keyword"]').tab('show');
 					$('#mobile_tabs a[href="#keyword"]').tab('show');
 					console.log("defaulted to keyword: ");
-					console.log(location.pathname);
-				*/
-					$('#desktop_tabs a[href="#advanced"]').tab('show');
-					$('#mobile_tabs a[href="#advanced"]').tab('show');
-					console.log("defaulted to advanced: ");
 					console.log(location.pathname);
 			}
 		});		
