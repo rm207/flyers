@@ -21,7 +21,7 @@ else {
 <title>bibliographic info</title>
 
 <!-- Bootstrap -->
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="style/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +36,7 @@ else {
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="style/js/bootstrap.min.js"></script>
 
 	<div class="container">
 		<div class="row clearfix">
@@ -50,73 +50,33 @@ else {
 	//debug
 	//echo $b;
 	//echo "<br />";
+
+	function doQuery($b) {
 	
-	function marcMaterialType_to_ReferenceTypeIndicatorTag($tag) {
-	
-		switch ($tag) {
-		
-			case "k" :
-				return "Artwork";
-				break;
-			
-			case "a" :
-				break;
-			
-			case "m" :
-				break;
-			
-			case "t" :
-				break;
-				
-			case "1" :
-				break;
-				
-			case "e" :
-				break;
-				
-			case "g" :
-				break;
-				
-			case "d" :
-			case "c" :
-				break;
-			
-			case "i" :
-				break;
-			
-			case "t" :
-				break;
-				
-			case "i" :
-				break;
-				
-			case "m" :
-				break;
-			
-			case ""
- 		
-		
+		//this is the mapping for the reference 
+		$reference_type_indicator_tag = 
+			array(
 			"Abstract" => "Abstract",
-			"Artwork" => "Artwork", //k - Two-dimensional nonprojectable graphic
+			"Artwork" => "Artwork",
 			"Bills/Resolutions" => "Bills/Resolutions",
 			"Book, Section" => "Book, Section",
 			"Book, Edited" => "Book, Edited",
-			"Book, Whole" => "Book, Whole", //a – Book
+			"Book, Whole" => "Book, Whole",
 			"Case/Court Decisions" => "Case/Court Decisions",
-			"Computer Program" => "Computer Program", //m - Computer file
+			"Computer Program" => "Computer Program",
 			"Conference Proceedings" => "Conference Proceedings",
-			"Dissertation/Thesis" => "Dissertation/Thesis", //t - thesis/dissertation
-			"Dissertation/Thesis, Unpublished" => "Dissertation/Thesis, Unpublished", //t - thesis/dissertation
-			"Generic" => "Generic", 
+			"Dissertation/Thesis" => "Dissertation/Thesis",
+			"Dissertation/Thesis, Unpublished" => "Dissertation/Thesis, Unpublished",
+			"Generic" => "Generic",
 			"Grant" => "Grant",
 			"Hearing" => "Hearing",
 			"Journal Article" => "Journal Article",
-			"Journal, Electronic" => "1", //1- electronic resource
+			"Journal, Electronic" => "Journal, Electronic",
 			"Laws/Statutes" => "Laws/Statutes",
 			"Magazine Article" => "Magazine Article",
-			"Map" => "Map", //e - Map / Cartographic material
-			"Monograph" => "Monograph", //a – Book
-			"Motion Picture" => "Motion Picture", //g - audiovisual
+			"Map" => "Map",
+			"Monograph" => "Monograph",
+			"Motion Picture" => "Motion Picture",
 			"Music Score" => "Music Score",
 			"Newspaper Article" => "Newspaper Article",
 			"Online Discussion Forum" => "Online Discussion Forum",
@@ -128,11 +88,7 @@ else {
 			"Video/ DVD" => "Video/ DVD",
 			"Web Page" => "Web Page",
 			);
-	
-	}
-
-	function doQuery($b) {
-			
+		
 		/*
 		include file (bibliographic.php) supplies the following arguments as the example below illustrates :
 			$username = "username";

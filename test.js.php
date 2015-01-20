@@ -1,4 +1,6 @@
-<?php
+<?php 
+
+header('Content-Type: text/javascript');
 
 //This function will check to see if the client is in the IP range for on campus.
 function oncampus() {
