@@ -319,8 +319,8 @@
 		
 		var illiad_url = 'http://library2.udayton.edu/bibliographic/illiad.php?b=' + bib_num;
 		var text_url = 'http://library2.udayton.edu/bibliographic/sms-send.php?b=' + bib_num;
-		var refworks_url = 'http://www.refworks.com/express/ExpressImport.asp?vendor=University%20of%20Dayton&filter=MARC%20Format&encoding=65001&url=http%3A%2F%2Flibrary2.udayton.edu%2Fbibliographic%2Fget_marc.php%3Fb%';
-		    refworks_url += bib_num;
+		var refworks_url = 'http://www.refworks.com/express/ExpressImport.asp?vendor=University%20of%20Dayton&filter=MARC%20Format&encoding=65001&url=';
+		    refworks_url += encodeURIComponent('http://library2.udayton.edu/bibliographic/get_marc.php?b=' + bib_num);
 	
 		document.getElementById('ICON_ROESCH_2_U_clone').href = illiad_url;
 		document.getElementById('ICON_ROESCH_2_U_clone').target = '_blank';
