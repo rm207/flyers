@@ -16,11 +16,14 @@ the page in mobile views)
 * add icon for patron view (icon but_ret2prec)
 
 * add icon for "Log Out" and  "Return To Your Record" anywhere they appear. 
-Also, add log off button to the front page (saddly, there doesn't appear
+Also, add log off button to the front page. --Sadly, there doesn't appear
 to be a way to add a link to the "Return To Your Record" from the main pages.
 
-* fix the briefcit(x) page style so that the padding / seperating lines are 
-more pleasing to the eye.
+* adjust the input boxes for the patron login page so they're more aligned / 
+visually pleasing.
+
+* fix the briefcit(x) page style so that the padding / separating lines are 
+more visually pleasing.
 
 * possibly add <!--{pager}--> token to the bottom of bib_display.html just before botlogo.html
  
