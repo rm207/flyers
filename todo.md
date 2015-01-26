@@ -1,6 +1,8 @@
 Todo List
 =========
 
+* change "Your Library Account" (everywhere) to match www.udayton.edu/libraries language: "My Library Account"
+
 * add the QR code javascript to the bib_display.html page. (Maybe figure out 
 a way to incorporate the "Text This To Me" button, or move the button)
 
