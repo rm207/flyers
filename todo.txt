@@ -16,4 +16,5 @@
 *fix javascript for the desktop and mobile view so that the navigation view changes when you switch viewports.
 	(on mainmenu.html selected pages do not continue to stay selected when toggling viewports)
 
-
+*remove patron record option to change a held item's pickup location. 
+	(most likely a wwwoption that needs updated)
