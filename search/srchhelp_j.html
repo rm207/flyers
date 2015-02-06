@@ -1444,47 +1444,44 @@
 					$('#desktop_tabs a[href="#keyword"]').tab('show');
 					$('#mobile_tabs a[href="#keyword"]').tab('show');
 					console.log("keyword: ");
-					console.log(location.pathname);
 					break;
 
 				case "/search/X":
-				case "/search/" :
+				case "/search/":
+				case "/search":
 					$('#desktop_tabs a[href="#advanced"]').tab('show');
 					$('#mobile_tabs a[href="#advanced"]').tab('show');
 					console.log("advanced: ");
-					console.log(location.pathname);
 					break;
 					
 				case "/search/a":
-				case "/search/t":
-				case "/search/j":
+				case "search/t":
 					$('#desktop_tabs a[href="#author"]').tab('show');
 					$('#mobile_tabs a[href="#author"]').tab('show');
 					console.log("author: ");
-					console.log(location.pathname);
 					break;
 					
 				case "/search/d":
 					$('#desktop_tabs a[href="#subject"]').tab('show');
 					$('#mobile_tabs a[href="#subject"]').tab('show');
 					console.log("subject: ");
-					console.log(location.pathname);
+
+				case "/search/j":
+					$('#desktop_tabs a[href="#journal"]').tab('show');
+					$('#mobile_tabs a[href="#journal"]').tab('show');
+					console.log("journal: ");
 					break;
 					
 				case "/search/y":
 					$('#desktop_tabs a[href="#database"]').tab('show');
 					$('#mobile_tabs a[href="#database"]').tab('show');
 					console.log("database: ");
-					console.log(location.pathname);
 					break;
 					
 				case "/search/r":
 				case "/search/p":
 					$('#desktop_tabs a[href="#reserves"]').tab('show');
 					$('#mobile_tabs a[href="#reserves"]').tab('show');
-					console.log("reserves: ");
-					console.log(location.pathname);
-					break;
 
 				case "/search/c":
 				case "/search/g":
@@ -1494,14 +1491,12 @@
 					$('#desktop_tabs a[href="#numbers"]').tab('show');
 					$('#mobile_tabs a[href="#numbers"]').tab('show');
 					console.log("numbers: ");
-					console.log(location.pathname);
 					break;
 
 				default:
 					$('#desktop_tabs a[href="#keyword"]').tab('show');
 					$('#mobile_tabs a[href="#keyword"]').tab('show');
 					console.log("defaulted to keyword: ");
-					console.log(location.pathname);
 			}
 		});		
 	</script>
