@@ -154,9 +154,10 @@
 <!--{msg}-->
 	<!-- /msg -->
 	
-	<!--{innreach}-->	
+	<!-- innreach -->	
 <!--{innreach}-->	
-	<!--{innreach}-->
+	<!-- innreach -->
+	
 	<!-- spellcheck -->
 <!--{spellcheck}-->
 	<!-- /spellcheck -->
@@ -1307,10 +1308,11 @@
 					break;
 					
 				case "/search/a":
-				case "search/t":
+				case "/search/t":
+				case "/search/j"
 					$('#desktop_tabs a[href="#author"]').tab('show');
 					$('#mobile_tabs a[href="#author"]').tab('show');
-					console.log("author: ");
+					console.log("author / title / journal: ");
 					break;
 					
 				case "/search/d":
@@ -1318,11 +1320,6 @@
 					$('#mobile_tabs a[href="#subject"]').tab('show');
 					console.log("subject: ");
 
-				case "/search/j":
-					$('#desktop_tabs a[href="#journal"]').tab('show');
-					$('#mobile_tabs a[href="#journal"]').tab('show');
-					console.log("journal: ");
-					break;
 					
 				case "/search/y":
 					$('#desktop_tabs a[href="#database"]').tab('show');
