@@ -154,9 +154,10 @@
 <!--{msg}-->
 	<!-- /msg -->
 	
-	<!--{innreach}-->	
+	<!-- innreach -->	
 <!--{innreach}-->	
-	<!--{innreach}-->
+	<!-- innreach -->
+	
 	<!-- spellcheck -->
 <!--{spellcheck}-->
 	<!-- /spellcheck -->
@@ -1318,7 +1319,7 @@
 					$('#desktop_tabs a[href="#subject"]').tab('show');
 					$('#mobile_tabs a[href="#subject"]').tab('show');
 					console.log("subject: ");
-
+					break;
 					
 				case "/search/y":
 					$('#desktop_tabs a[href="#database"]').tab('show');
@@ -1330,6 +1331,7 @@
 				case "/search/p":
 					$('#desktop_tabs a[href="#reserves"]').tab('show');
 					$('#mobile_tabs a[href="#reserves"]').tab('show');
+					break;
 
 				case "/search/c":
 				case "/search/g":
