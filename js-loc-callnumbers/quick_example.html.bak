@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<style>
+body {
+	font-family: 'Droid Sans Mono', monospace, Monaco;
+	white-space: nowrap;
+}
+</style>
+
+<script type="text/javascript" src="locCallClass.js"></script>
+
+</head>
+
+<body>
+
+Test some stuff ...
+<br />
+
+<script type="text/javascript">
+loc = new locCallClass();
+</script>
+
+<br />
+Test if a call number is in between two other call numbers:
+<br />
+loc.isBetween("HA 203 .A218 no.54", "HB 501 .M5 A76 1990", "HA 205.E77 v.1 1976");
+<br />
+
+<script>
+
+	document.write(loc.isBetween("HA 203 .A218 no.54", "HB 501 .M5 A76 1990", "HA 205.E77 v.1 1976"));
+
+</script>
+
+<br />
+<br />
+Sort some call numbers:
+<br />
+<script>
+var call_nums = ["QA 76.78.J 39 H38 2011", "HA 203 .A218 no.54", "QA 76.78.J 39 H38 2012", "H 1 .E77 v.1 1976", "HB 501 .M5 A76 1990", "QA 76.75.J 39 H38 2012", "QA 76.73.J 39 H38 2012"];
+</script>
+var call_nums = [
+<script>
+for (var i=0; i<call_nums.length-1; i++){
+	document.write ('\"' + call_nums[i] + '\", ');
+}
+document.write ('\"' + call_nums[call_nums.length-1] + '\" ]');
+</script>
+<br />
+loc.sortCallNumbers(call_nums);
+<br />
+(this can also be written as the following...
+<br />
+loc.sortCallNumbers('AA 1', 'AA 99', 'AA 50');  
+for example)
+<br />
+<script>
+	
+	//var sorted = loc.sortCallNumbers(call_nums);
+
+	var sorted = loc.sortCallNumbers('AA 1', 'AA 99', 'AA 50');
+	
+	for (var i=0; i<sorted.length; i++) {
+		document.write(sorted[i] + "\n<br />");
+	}
+
+</script>
+
+<br />
+<br />
+
+Get the "normalized" version of a call number (useful for comparing any two or more LoC Call Numbers):
+<br />
+loc.returnNormLcCall(" QA 76.73.J 39 H38 2011");
+<br />
+<script>
+document.write(loc.returnNormLcCall(" QA 76.73.J 39 H38 2011"));
+</script>
+<br />
+
+
+</body>
+</html>
