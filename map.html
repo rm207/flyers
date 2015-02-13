@@ -181,9 +181,16 @@ please see document_map.html for directions.
 			<!-- BODY AREA -->
 			<div id="body_area">
 			
+				<div id="map_output">
+					<img src="http://library2.udayton.edu/map/1small.jpg" class="img-responsive">
+				</div>
+				
 				<script>
 					if(window.location.hash) {
-						document.write(window.location.hash);
+						//document.write(window.location.hash);
+						//debugger;
+						document.getElementById('map_output').getElementsByTagName('img')[0].src 
+							= 'http://library2.udayton.edu/map/' + window.location.hash.substr(1);
 					} else {
 						document.write('No map data found');
 					}
