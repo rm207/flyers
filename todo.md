@@ -34,6 +34,12 @@ more visually pleasing.
 * fix javascript for the desktop and mobile view so that the navigation view changes when you switch viewports.
 	(on mainmenu.html selected pages do not continue to stay selected when toggling viewports)
 
+* consider adding code to break out of the frame if the user so desires. For example, when browsing certain electronic 
+resources, the catalog remains open in a frame above with a button that says, "Return to Catalog" (taking up 30% of the 
+window size).  To break out of that, we would add a second button, and add the following javascript to it (first check if
+there is a valid frame)
+window.location.assign(document.getElementsByTagName('frame')[1].src)
+
 Finished / Addressed
 --------------------
 * ~~change font?
