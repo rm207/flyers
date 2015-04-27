@@ -22,9 +22,6 @@ to be a way to add a link to the "Return To Your Record" from the main pages.
 * adjust the input boxes for the patron login page so they're more aligned / 
 visually pleasing.
 
-* fix the briefcit(x) page style so that the padding / separating lines are 
-more visually pleasing.
-
 * possibly add <!--{pager}--> token to the bottom of bib_display.html just before botlogo.html
  
 * fix request problem (request icon shouldn't display) http://flyers.udayton.edu:2082/record=b1311694~S0
@@ -51,6 +48,9 @@ Scratched
 ---------
 * add the QR code javascript to the bib_display.html page. (Maybe figure out 
 a way to incorporate the "Text This To Me" button, or move the button)
+
+* fix the briefcit(x) page style so that the padding / separating lines are 
+more visually pleasing.
 
 Added from todo.txt (maybe repeats)
 -------------------
