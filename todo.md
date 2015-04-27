@@ -4,9 +4,6 @@ Todo List
 
 * the "NO ENTRIES FOUND" page should produce a page that has form elements that are partially filled in ... example: http://flyers.udayton.edu/search/X?SEARCH=shakespeare+pickles&SORT=D&submit=Submit
 
-* add the QR code javascript to the bib_display.html page. (Maybe figure out 
-a way to incorporate the "Text This To Me" button, or move the button)
-
 * add find it / map it feature back for items in bib_display.html (basically 
 anything that has a call number associated with it)
 
@@ -49,6 +46,11 @@ Finished / Addressed
 * ~~add refworks~~
 
 * ~~change "Your Library Account" (everywhere) to match www.udayton.edu/libraries language: "My Library Account" ~~
+
+Scratched
+---------
+* add the QR code javascript to the bib_display.html page. (Maybe figure out 
+a way to incorporate the "Text This To Me" button, or move the button)
 
 Added from todo.txt (maybe repeats)
 -------------------
