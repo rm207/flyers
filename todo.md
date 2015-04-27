@@ -23,8 +23,6 @@ to be a way to add a link to the "Return To Your Record" from the main pages.
 visually pleasing.
 
 * possibly add <!--{pager}--> token to the bottom of bib_display.html just before botlogo.html
- 
-* fix request problem (request icon shouldn't display) http://flyers.udayton.edu:2082/record=b1311694~S0
 
 * fix javascript for the desktop and mobile view so that the navigation view changes when you switch viewports.
 	(on mainmenu.html selected pages do not continue to stay selected when toggling viewports)
@@ -43,6 +41,8 @@ Finished / Addressed
 * ~~add refworks~~
 
 * ~~change "Your Library Account" (everywhere) to match www.udayton.edu/libraries language: "My Library Account" ~~
+
+* fix request problem (request icon shouldn't display) http://flyers.udayton.edu:2082/record=b1311694~S0
 
 Scratched
 ---------
