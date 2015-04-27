@@ -1,7 +1,8 @@
 Todo List
 =========
+* should be a space between a call number and "Nearby items" in "brief" view
 
-* change "Your Library Account" (everywhere) to match www.udayton.edu/libraries language: "My Library Account"
+* the "NO ENTRIES FOUND" page should produce a page that has form elements that are partially filled in ... example: http://flyers.udayton.edu/search/X?SEARCH=shakespeare+pickles&SORT=D&submit=Submit
 
 * add the QR code javascript to the bib_display.html page. (Maybe figure out 
 a way to incorporate the "Text This To Me" button, or move the button)
@@ -47,6 +48,7 @@ Finished / Addressed
 
 * ~~add refworks~~
 
+* ~~change "Your Library Account" (everywhere) to match www.udayton.edu/libraries language: "My Library Account" ~~
 
 Added from todo.txt (maybe repeats)
 -------------------
