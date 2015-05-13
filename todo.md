@@ -1,5 +1,8 @@
 Todo List
 =========
+
+* Make The buttons on the top search pages look more consistant (make them the standard blue color as the rest of the buttons on the site)
+
 * should be a space between a call number and "Nearby items" in "brief" view
 
 * the "NO ENTRIES FOUND" page should produce a page that has form elements that are partially filled in ... example: http://flyers.udayton.edu/search/X?SEARCH=shakespeare+pickles&SORT=D&submit=Submit
