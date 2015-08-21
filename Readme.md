@@ -1,1 +1,2 @@
-html javascript and css code for flyers.udayton.edu
+Html, javascript, and CSS code for flyers.udayton.edu
+
