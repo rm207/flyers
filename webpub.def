@@ -33,6 +33,7 @@ b|e||-6789|EDITION||b|
 b|H|||||
 b|T|||||
 #
+#Bibliographic
 b|b||-6789|ALT NAME||b|
 b|u|210|-6789|KEY TITLE||b|
 b|u|222|-6789|PERIODICAL TITLE||b|
@@ -98,6 +99,7 @@ b|y|[^89]..|-6789|||b|
 b|y|8[^5].|-6789|||b|
 b|y|85[^6]|-6789|||b|
 b|y||-6789|MARC||b|
+b|y|910|||||
 b|n|590|-6789|NOTE||b|
 b|n|590|-6789|LOCAL NOTE||b|
 b|n|501|-6789|WITH:||b|
@@ -133,8 +135,6 @@ b|q|775|-6789|OTHER ENTRY||b|
 b|q|776|-6789|ADDITIONAL PHYSICAL FORM ENTRY||b|
 b|q|777|-6789|ISSUED WITH ENTRY||b|
 b|q|786|-6789|DATA SOURCE ENTRY||b|
-e|t|||RESOURCE NAME||b|
-e|e|||DESCRIPTION||b|
 b|o||-6789|OCLC #||b|
 b|i|019|-6789|ALT OCLC||b|
 b|i|020|-6789|ISBN||b|
@@ -147,6 +147,8 @@ b|g|086|-6789|SUDOC #||b|
 b|g||-6789|GOVT. DOC#||b|
 #b|h||-6789|LIB. HAS||b|
 b|w|787|-6789|RELATED WRK||b|
+#
+#Checkin/Holdings
 c|$||+|LOCATION||b|
 c|i||a|IDENTITY||b|&nbsp;
 |C||&|||b|&nbsp;
@@ -154,6 +156,10 @@ c|Q||||b|
 c|h||-8x|LIB. HAS||b|
 c|2||+|Latest Received||b|&nbsp;
 c|3||+|Latest Received||b|
+#
+#Resource
+e|t|||RESOURCE NAME||b|
+e|e|||DESCRIPTION||b|
 e|t||-6789|DATABASE NAME||b|
 e|k||-6789|RESOURCE ADVISORY||b|
 e|n||-6789|NOTES||b|
