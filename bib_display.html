@@ -219,6 +219,9 @@
 <script>
 	//rewrite the URLs
 	CheckOffCampus();
+	
+	//
+	
 </script>
 
 	<!-- bloblinks -->
@@ -307,11 +310,9 @@
 </div>
 <!--{xif}-->
 
-
 </div><!-- close bibDisplayContent -->
 <div class="clear"></div>
 </div><!-- close bibDisplayBody -->
-
 
 	<script>
 		//start with the base URL for illiad
@@ -331,6 +332,11 @@
 		document.getElementById('ICON_REFWORKS_clone').href = refworks_url;
 		document.getElementById('ICON_REFWORKS_clone').target = 'RefWorksMain';
 	
+		// the following will add a target="_blank" to all URLS produced in the URLS token
+		var links = document.getElementById('checkoffcampus').getElementsByTagName('a');
+		for(var i=0; i<links.length; i++) {
+			links[i].target = "_blank";
+		}
 	</script>
 
 	<!--{botlogo}-->
