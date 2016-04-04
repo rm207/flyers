@@ -8,4 +8,6 @@ This code is provided to your feely, but it would be appropriate if you recogniz
 
 It is expected that no support will be provided by these authors. The code is AS-IS. Best of luck.
 
-<b>Build Notes (or notes to help you implement our code)</b>
+<b>Build Notes (or notes to help you/us implement our code)</b>
+
+We combined all of the searchhelp_*.html files into one file and then we use a bat file to copy the contents of the index.html/mainmenu.html into all of the searchhelp_*.html pages. If you make changes to mainmenu.html, run the bat file to copy its contents programmatically.
