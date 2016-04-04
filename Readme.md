@@ -8,4 +8,4 @@ This code is provided to your feely, but it would be appropriate if you recogniz
 
 It is expected that no support will be provided by these authors. The code is AS-IS. Best of luck.
 
-Build Notes (or notes to help you implement our code)
+<b>Build Notes (or notes to help you implement our code)</b>
