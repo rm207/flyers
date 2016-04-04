@@ -6,7 +6,7 @@ This repository was designed by a library for the purposes of searching a librar
 
 This code is provided to your feely, but it would be appropriate if you recognized the use of our code publicly or privately. Perhaps mail us a letter letting us know how appreciative you are for our hard work. If you use a lot of our code perhaps leave an html comment in your code stating <!--thanks to flyers.udayton.edu for use of their awesome code -->.
 
-It is expected that no support will be provided by these authors. The code is AS-IS. Best of luck.
+It is expected that no support will be provided by these authors. The code is <b>AS-IS</b>. Best of luck. Having said that, please review these notes below for more information.
 
 <b>Build Notes (or notes to help you/us [re]implement our code)</b>
 
