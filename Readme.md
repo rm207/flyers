@@ -11,8 +11,7 @@ It is expected that no support will be provided by these authors. The code is <b
 <b>Build Notes (or notes to help you/us [re]implement our code)</b>
 
 1. We combined all of the searchhelp_x.html files into one file and then we use a bat file to copy the contents of the index.html into all of the searchhelp_*.html pages. If you make changes to index.html, run the /search/batch_srchelp.bat file to copy its contents programmatically.
-<pre><code>
-cat ../index.html > mainmenu.html
+<pre><code>cat ../index.html > mainmenu.html
 cat ../index.html > srchhelp_X_nojavascript.html
 </pre></code>
 As a result, /search directory above is effectively your /screens directory, minus index.html, briefcit.html, and bibdisplay.html
