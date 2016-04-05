@@ -1,5 +1,7 @@
-Html, javascript, and CSS code for flyers.udayton.edu
+<h2>About</h2>
+<p>This directory contains responsive html, javascript, and CSS code for flyers.udayton.edu. </p>
 
+<h2>Notes</h2>
 Although the majority of this code may be used freely, some fonts may be licensed. If licensed font is used by you or your organization, the authors of this code bear no responsibility for your unlicensed use of someone else's fonts.
 
 This repository was designed by a library for the purposes of searching a library catalog. Using this code for other purposes may be useless and futile. Any errors caused by the use of this code on your web servers are your own fault and not the fault of the authors of this respository. These errors only show you probably don't know how to do html and javascript coding. 
