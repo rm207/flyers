@@ -11,7 +11,7 @@ This code is provided to your feely, but it would be appropriate if you recogniz
 It is expected that no support will be provided by these authors. The code is <b>AS-IS</b>. Best of luck. Having said that, please review these notes below for more information.
 
 <h2>Build Notes (or notes to help you/us [re]implement our code)</h2>
-<p>
+
 1. We combined all of the searchhelp_x.html files into one file and then we use a bat file to copy the contents of the index.html into all of the searchhelp_*.html pages. If you make changes to index.html, run the /search/batch_srchelp.bat file to copy its contents programmatically.
 <pre><code>cat ../index.html > mainmenu.html
 cat ../index.html > srchhelp_X_nojavascript.html
@@ -23,4 +23,3 @@ As a result, /search directory above is effectively your /screens directory, min
 3. After patrons log in, we have not made these patron record view pages responsive yet (it is not a bug).
 
 4. We've put our wwwoptions in an html for a very specific reason. If you load the file extension of wwwoptions.txt, the ILS doesn't allow you to edit the file directly in the Web Master function, or the edit button is grayed out. But by using an .html extension, we can edit the file and then load/activate the wwwoptions in bulk (by making a copy minus the file extension).
-</p> 
