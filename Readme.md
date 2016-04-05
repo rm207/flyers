@@ -1,5 +1,5 @@
 <h2>About</h2>
-<p>This directory contains responsive html, javascript, and CSS code for flyers.udayton.edu. </p>
+<p>These directories contains responsive html, javascript, and CSS code for flyers.udayton.edu. </p>
 
 <h2>Notes</h2>
 Although the majority of this code may be used freely, some fonts may be licensed. If licensed font is used by you or your organization, the authors of this code bear no responsibility for your unlicensed use of someone else's fonts.
