@@ -23,4 +23,4 @@ As a result, /search directory above is effectively your /screens directory, min
 3. After patrons log in, we have not made these patron record view pages responsive yet (it is not a bug).
 
 4. We've put our wwwoptions in an html for a very specific reason. If you load the file extension of wwwoptions.txt, the ILS doesn't allow you to edit the file directly in the Web Master function, or the edit button is grayed out. But by using an .html extension, we can edit the file and then load/activate the wwwoptions in bulk (by making a copy minus the file extension).
-</p> <!--Close build notes-->
+</p> /*Close build notes-->*/
