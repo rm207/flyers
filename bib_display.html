@@ -28,9 +28,19 @@
 <!--{innreach}-->
 	<!--{innreach}-->	
 
+	<!-- REMOVING REFWORKS but leaving the code so we can look back fondly -->
+	<!-- 	
 	<a>
 		<div style="display:none" id="ICON_REFWORKS" class="REFWORKS btn btn-default catnav">
 			<i class="fa fa-file-text"></i> export to refworks
+		</div>
+	</a>
+	-->
+	
+	<!-- button for .RIS citation export -->
+	<a>
+		<div style="display:none" id="ICON_RIS" class="RIS btn btn-default catnav">
+			<i class="fa fa-file-text"></i> Export for citation
 		</div>
 	</a>
 
@@ -147,7 +157,11 @@
 		['ICON_BUT_REQUEST',], //request
 		['ICON_INNREACH'], //OHIOLINK
 		['ICON_BUT_SHOWSIM',], //more like this
-		['ICON_REFWORKS',], //export to refworks
+		
+		// removing refworks from this list
+		//['ICON_REFWORKS',], //export to refworks
+		
+		['ICON_RIS',], //export to RIS
 		['ICON_BUT_BIBEXPORT',], //add to saved
 		['ICON_BOOKCART_SAVED',], //remove from saved
 		['ICON_MYLISTS_SAVE',], //add to my lists
@@ -316,21 +330,27 @@
 
 	<script>
 		//start with the base URL for illiad
-		//var illiad_url = 'https://udayton.illiad.oclc.org/illiad/illiad.dll?Action=10&Form=20&value=GenericRequestBook-Faculty';
-		
-		var illiad_url = 'http://library2.udayton.edu/bibliographic/illiad.php?b=' + bib_num;
-		var text_url = 'http://library2.udayton.edu/bibliographic/sms-send.php?b=' + bib_num;
-		var refworks_url = 'http://www.refworks.com/express/ExpressImport.asp?vendor=University%20of%20Dayton&filter=MARC%20Format&encoding=65001&url=';
-		    refworks_url += encodeURIComponent('http://library2.udayton.edu/bibliographic/get_marc.php?b=' + bib_num);
+		//var illiad_url = 'https://udayton.illiad.oclc.org/illiad/illiad.dll?Action=10&Form=20&value=GenericRequestBook-Faculty';		
 	
+		var illiad_url = 'http://library2.udayton.edu/bibliographic/illiad.php?b=' + bib_num;
 		document.getElementById('ICON_ROESCH_2_U_clone').href = illiad_url;
 		document.getElementById('ICON_ROESCH_2_U_clone').target = '_blank';
 		
+		var text_url = 'http://library2.udayton.edu/bibliographic/sms-send.php?b=' + bib_num;
 		document.getElementById('SMS2ME_clone').href = text_url;
 		document.getElementById('SMS2ME_clone').target = '_blank';
-	
+		
+		var ris_url = 'http://library2.udayton.edu/api/bib/get_ris.php?bib=' + bib_num;
+		document.getElementById('ICON_RIS_clone').href = ris_url;
+		document.getElementById('ICON_RIS_clone').target = '_blank';
+		
+		// removing refworks
+		/*
+		var refworks_url = 'http://www.refworks.com/express/ExpressImport.asp?vendor=University%20of%20Dayton&filter=MARC%20Format&encoding=65001&url=';
+		    refworks_url += encodeURIComponent('http://library2.udayton.edu/bibliographic/get_marc.php?b=' + bib_num);
 		document.getElementById('ICON_REFWORKS_clone').href = refworks_url;
 		document.getElementById('ICON_REFWORKS_clone').target = 'RefWorksMain';
+		*/
 	
 		// the following will add a target="_blank" to all URLS produced in the URLS token
 		var links = document.getElementById('checkoffcampus').getElementsByTagName('a');
