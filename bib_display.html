@@ -44,6 +44,12 @@
 		</div>
 	</a>
 
+	<a><!-- button for Cite This at OCLC-->
+		<div style="display:none" id="CITEOCLC" class="REFWORKS btn btn-default catnav">
+			<i class="fa fa-file-text"></i> cite this
+		</div>
+	</a>
+	
 	<a>
 		<div style="display:none" id="ICON_ROESCH_2_U" class="ROESCH_2_U btn btn-default catnav">
 			<i class="fa fa-truck" style="font-size:150%"></i> Roesch 2U<div>(faculty use only)</div>
@@ -162,6 +168,7 @@
 		//['ICON_REFWORKS',], //export to refworks
 		
 		['ICON_RIS',], //export to RIS
+		['CITEOCLC',], //text this to me
 		['ICON_BUT_BIBEXPORT',], //add to saved
 		['ICON_BOOKCART_SAVED',], //remove from saved
 		['ICON_MYLISTS_SAVE',], //add to my lists
@@ -328,6 +335,37 @@
 <div class="clear"></div>
 </div><!-- close bibDisplayBody -->
 
+
+<!-- begin "Cite This" script from IUG list.   -->
+<script type="text/javascript">
+		try{
+		var tr = document.getElementsByTagName('TR');
+		var otherlib_title = "", otherlib_isbn = "";
+		for(i = 0; i < tr.length; i++) {
+			var x=tr[i].getElementsByTagName('TD');
+			if (x.length == 2 && x[0].innerHTML == "OCLC #") {
+				otherlib_title = x[1].innerHTML.replace(/(<([^>]+)>)/ig,""); //get oclc;
+				otherlib_title = otherlib_title.replace(/ /g,""); //take out spaces if any;
+				otherlib_title = otherlib_title.replace(/[\n\t]/ig,""); //take out newline;
+			}
+			else if (x.length == 2 && x[0].innerHTML == "ISBN") {
+				otherlib_isbn = x[1].innerHTML.replace(/(<([^>]+)>)/ig,""); //get isbn field;
+				otherlib_isbn = otherlib_isbn.replace(/^([0-9xX]+[^0-9xX]).*$/igm,"$1"); //strip out non-isbn data;
+				otherlib_isbn = otherlib_isbn.replace(/ /g,""); //take out spaces if any;
+				otherlib_isbn = otherlib_isbn.replace(/[\n\t]/ig,""); //take out newline;
+			}
+		}
+		if (otherlib_title.length > 0) {
+			document.getElementById("citeoclc").innerHTML = "<a href='http://worldcat.org/wcpa/oclc/" + otherlib_title + "?page=citation' target='_blank'>Cite This</a>";}
+		else {
+		  	document.getElementById("citeoclc").innerHTML = "<a href='http://libguides.udayton.edu/citingsources'>Citation Help</a>.";}
+	}catch(e) {}
+	
+</script>
+<!--end Cite this-->
+
+
+
 	<script>
 		//start with the base URL for illiad
 		//var illiad_url = 'https://udayton.illiad.oclc.org/illiad/illiad.dll?Action=10&Form=20&value=GenericRequestBook-Faculty';		
@@ -351,6 +389,10 @@
 		document.getElementById('ICON_REFWORKS_clone').href = refworks_url;
 		document.getElementById('ICON_REFWORKS_clone').target = 'RefWorksMain';
 		*/
+		
+		var citeoclc_url = 'http://worldcat.org/wcpa/oclc/' + otherlib_title + '?page=citation';
+		document.getElementById('CITEOCLC_clone').href = citeoclc_url;
+		document.getElementById('CITEOCLC_clone').target = '_blank';
 	
 		// the following will add a target="_blank" to all URLS produced in the URLS token
 		var links = document.getElementById('checkoffcampus').getElementsByTagName('a');
