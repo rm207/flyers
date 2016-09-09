@@ -1,0 +1,16 @@
+#logic rectype tag fnum rule op target1 target2 note/error-message(if logic=q)
+v|b| |31||=|d|| suppress pub display if bcode3=d 
+v|b| |31||=|o|| suppress pub display if bcode3=o 
+v|b| |31||=|n|| suppress pub display if bcode3=n 
+q|b| |31||=|s|| suppress pub display if bcode3=s 
+v|i| |60||=|s|| suppress pub display if icode2=s 
+q|i| |60||=|n|| suppress pub display if icode2=n 
+v|c| |37||=|s|| suppress pub display if scode2=s 
+q|c| |37||=|n|| suppress pub display if scode2=n 
+v|o| |20||=|z|| suppress pub display if status=z
+v|o| |09||=|s|| suppress pub display if code4=s 
+q|o| |09||=|n|| suppress pub display if code4=n 
+v|e| |173| |=|d|| suppress opac display if suppress=d
+v|e| |173| |=|n|| suppress opac display if suppress=n
+q|e| |173| |=|r|| suppress opac display if suppress=r
+q|l| |228| |=|n|| supress license if license supression=n
