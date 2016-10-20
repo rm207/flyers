@@ -1,0 +1,12 @@
+Fill color
+
+e-resource: st1{fill:#1281C4;
+
+Print: st0{fill:#0E4C8B;
+
+
+
+
+" style="display:none"><!--h=microfiche.svg--><svg
+
+<img style="display:none" src="
