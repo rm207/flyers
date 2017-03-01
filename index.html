@@ -13,7 +13,7 @@ please see document_map.html for directions.
 
  -->
 	</head>
-	<body>
+	<body onload="if (location.search.indexOf('SUBKEY') != -1 || location.search.indexOf('SEARCH') != -1 || location.search.indexOf('searcharg=') != -1 ) modifySearch(document.location.search); init_progsearch(); if (document.search) document.search.searchText1.focus();">
 
 		<!-- HEADER -->
 		<div id="HEADER">
@@ -291,21 +291,18 @@ please see document_map.html for directions.
 		<!-- get our iii tokens -->
 			<!-- branch -->
 			<div id="token_branch" style="display: none;">
-				<!--To update these location options, in SDA go to ASAA and select the Branches menu options-->
 <!--{branch}-->
 			</div>
 			<!-- /branch -->
 
 			<!-- mattype -->
 			<div id="token_mattype" style="display: none;">
-				<!--To update these material types, in SDA go to Admin->Parameters->General->Fixed Length Codes and update the Mat Type options-->
 <!--{mattype}-->
 			</div>
 			<!-- /mattype -->
 
 			<!-- lang -->
 			<div id="token_lang" style="display: none;">
-				<!--To update these language options, in SDA go to ASAA and select the Menu Options for limit by language option-->
 <!--{lang}-->
 			</div>
 			<!--lang-->
@@ -1730,16 +1727,6 @@ please see document_map.html for directions.
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 
 		<script src="/screens/bootstrap.min.js"></script>
-
-		<!--
-
-
-		access to the files used to create the University of Dayton Libraries WebPAC are available
-		for use "as is" at the following location:
-		https://github.com/rm207/flyers
-
-
-		-->
 
 	</body>
 </html>
